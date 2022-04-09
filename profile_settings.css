@@ -1,0 +1,77 @@
+.body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#underline {
+    text-decoration: underline;
+    text-decoration-color: #C5C5C5;
+    text-underline-offset: 15px;
+    text-decoration-thickness: 2px;
+}
+
+#top {
+    position: absolute;
+    width: 50%;
+    height: 5%;
+    left: 10%;
+    top: 75px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 30px;
+    color: #FFFFFF
+    
+}
+
+.banner {
+    position: absolute;
+    background: rgba(69, 90, 100, 0.43);
+    opacity: 0.43;
+    width: 100%;
+    height: 191px;
+    left: 0%;
+    top: 136px;
+}
+
+.first {
+    margin-top: 434px;
+}
+
+.container {
+    margin: 25%;
+    margin-top: 5%;
+    width: 50%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+  }
+
+  .label{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .form-control {
+    border-radius: 0.5rem;
+  }
+
+  .blueButtons {
+    border-radius: 10rem;
+    border: 3px solid #688691;
+    color: #688691;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+  }
+
+  .button {
+    background: #68B566;
+    border-radius: 0%;
+    width: 212px;
+    height: 44px;
+  }
+
+  
+  
+
