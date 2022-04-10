@@ -6731,6 +6731,7 @@ textarea.form-control-lg {
 
 .align-items-center {
   align-items: center !important;
+  margin-top: 120px;
 }
 
 .align-items-baseline {
