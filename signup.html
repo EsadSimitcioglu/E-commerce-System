@@ -20,27 +20,26 @@
             <h2>Choose account type</h2>
             <div class="radio-buttons">
                 <label>
-                    <input id = "storeOwnerOption" type="radio" name="account" value="small" checked>
+                    <input id="storeOwnerOption" type="radio" name="account" value="small" checked>
                     <img src="images/Store Owner Option.svg">
-                  </label>
-                  
-                  <label>
-                    <input id = "customerOption" type="radio" name="account" value="big">
+                </label>
+                <label>
+                    <input id="customerOption" type="radio" name="account" value="big">
                     <img src="images/Customer Option.svg">
-                  </label>
+                </label>
             </div>
             <form>
-                <input id = "nameTextField" type="text" name="first-name" placeholder="First Name"/>
-                <input id = "surnameTextField" type="text" name="surname" placeholder="Surname"/>
-                <input id = "emailTextField" type="email" name="email" placeholder="E-mail"/>
-                <input id = "passwordTextField" type="password" name="password" placeholder="Password"/>
-                <input id = "rePasswordTextField" type="password" name="password-again" placeholder="Password Again"/>
-                <center><input onclick="signUp()" type = "button" class="register" value="REGISTER" /></center>
+                <input id="nameTextField" type="text" name="first-name" placeholder="First Name" />
+                <input id="surnameTextField" type="text" name="surname" placeholder="Surname" />
+                <input id="emailTextField" type="email" name="email" placeholder="E-mail" />
+                <input id="passwordTextField" type="password" name="password" placeholder="Password" />
+                <input id="rePasswordTextField" type="password" name="password-again" placeholder="Password Again" />
+                <input id="verificationCode" type="text" name="verification-code" placeholder="Verification Code" />
+                <center><input type="button" class="register" value="CONFIRM CODE"></center>
+                <center><input onclick="signUp()" type="button" class="register" value="REGISTER" /></center>
             </form>
-
         </div>
     </div>
-
 </body>
 
 </html>
