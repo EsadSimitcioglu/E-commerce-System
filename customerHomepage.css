@@ -27,30 +27,7 @@ h2 {
     box-shadow: 0px 5px 7px;
 }
 
-#saying {
-    font-family: 'Josefin Sans', sans-serif;
-    color: #B40114;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 25px;
-    letter-spacing: 0em;
-    text-align: left;
-}
 
-.lead {
-    font-family: 'Josefin Sans', sans-serif;
-    color: rgba(0, 0, 0, 0.4);
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
-
-}
-
-#jumboContents {
-    padding-top: 8%;
-    height: auto;
-}
 
 .btn.btn-danger {
     font-family: 'Josefin Sans', sans-serif;
@@ -100,4 +77,52 @@ h2 {
 #footer {
     background-color: #E1E2F4;
 }
+/* sdfaaaaaaaassssssssssssssssss */
 
+.main-image {
+    position: relative;
+    background: url("images/unsplash_JM-qKEd1GMI.svg") no-repeat center;
+    background-size: cover;
+    height: 461px;
+    overflow: hidden;
+    top: 68px;
+}
+
+/* .container {
+    position: absolute;
+    top: 50%;
+    transform: translate(10%, -50%);
+    text-align: left;
+} */
+
+.container h1 {
+    margin: 0;
+    font-size: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.container h1 span {
+    display: inline-block;
+    color: #B40114;
+    font-weight: 600;
+    line-height: 25px;
+    margin-top: 7%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.left {
+    margin: 15px 0px 48px 0px;
+    display: block;
+    font-size: 15px;
+    color: #ABABAB;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.shopnow-button {
+    color: #fff;
+    padding: 10px 24px;
+    background-color: #B40114;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
