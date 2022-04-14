@@ -1,13 +1,29 @@
+
+let customerID = -1
+let customerEmail = "esad.simitcioglu@ozu.edu.tr"
+
+
+window.onload = function() {
+    axios.get(`http://localhost:8080/customer/profile/${customerEmail}`)
+      .then(function (response) {
+        customerID = response.data
+      })
+      .catch(function (error) {
+        console.log(error);
+    });
+};
+
+
 function infoEnabled(){
-    document.getElementById("changePasswordButton").disabled = false
+    document.getElementById("nameTextField").disabled = false
+    document.getElementById("surnameTextField").disabled = false
+    document.getElementById("emailTextField").disabled = false
 }
 
 function passwordEnabled(){
-    document.getElementById("changePasswordButton").disabled = false
-}
-
-function changeProfileInfo(){
-   
+    document.getElementById("oldPasswordTextField").disabled = false
+    document.getElementById("newPasswordTextField").disabled = false
+    document.getElementById("reNewPasswordTextField").disabled = false
 }
 
 function changePassword(){
@@ -15,7 +31,7 @@ function changePassword(){
     let password = document.getElementById("newPasswordTextField").value; 
     let rePassword = document.getElementById("reNewPasswordTextField").value; 
 
-    axios.get(`http://localhost:8080/customer/${id}`)
+    axios.get(`http://localhost:8080/customer/${customerID}`)
       .then(function (response) {
         if(response.data != oldPassword) {
           alert("Old Password didn't match with your password")
@@ -32,7 +48,7 @@ function changePassword(){
     }
 
     axios.put(`http://localhost:8080/customer/password`), {
-        id: id, 
+        id: customerID, 
         password: password, 
     }
     .then(function (response) {
@@ -49,7 +65,7 @@ function changeInfo(){
     let email = document.getElementById("emailTextField").value; 
 
     axios.put(`http://localhost:8080/customer/info`), {
-        name: id, 
+        id: customerID, 
         name : name,
         surname: surname, 
         email: email
