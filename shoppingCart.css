@@ -1,0 +1,83 @@
+.body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#top {
+    position: absolute;
+    width: 50%;
+    height: 5%;
+    left: 10%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 30px;
+    color: #FFFFFF;
+    margin-top: 3.5em;
+
+}
+
+.banner {
+    background: #455A64;
+    opacity: 0.43;
+    width: 100%;
+    height: 191px;
+    left: 0%;
+    top: auto;
+}
+
+.container {
+    margin: auto;
+    margin-top: 5%;
+    width: 85%;
+}
+
+.text {
+    margin-top: 1rem;
+    justify-content: center;
+    text-align: center;
+    padding: 1%;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    color: #161850;
+}
+
+.img-fluid {
+    width: 122px;
+    height: 122px;
+    left: 484px;
+    top: 569px;
+}
+
+.product {
+    text-align: center;
+    padding: 12%;
+}
+
+.subtotal{
+    border-radius: 30px 30px 0px 0px;
+}
+
+.id {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+
+    color: rgba(22, 24, 80, 0.6);
+}
+
+.button {
+    background: #68B566;
+    border-radius: 0%;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+}
+
