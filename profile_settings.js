@@ -1,6 +1,8 @@
 
 let customerID = -1
 let customerEmail = "esad.simitcioglu@ozu.edu.tr"
+let infoEnable = false
+let passwordEnable = false
 
 
 window.onload = function() {
@@ -18,12 +20,15 @@ function infoEnabled(){
     document.getElementById("nameTextField").disabled = false
     document.getElementById("surnameTextField").disabled = false
     document.getElementById("emailTextField").disabled = false
+    infoEnable = true
+
 }
 
 function passwordEnabled(){
     document.getElementById("oldPasswordTextField").disabled = false
     document.getElementById("newPasswordTextField").disabled = false
     document.getElementById("reNewPasswordTextField").disabled = false
+    passwordEnable = true
 }
 
 function changePassword(){
@@ -76,4 +81,15 @@ function changeInfo(){
     .catch(function (error) {
         console.log(error);
     });
+}
+
+function saveChanges(){
+
+    if(infoEnable){
+        changeInfo()
+    }
+    if(passwordEnable){
+        changePassword()
+    }
+
 }
