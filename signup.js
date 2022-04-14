@@ -39,6 +39,4 @@ function signUp() {
         console.log(error);
       });
     }
-
-    
 }
