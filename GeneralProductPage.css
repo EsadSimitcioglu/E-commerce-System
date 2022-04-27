@@ -63,3 +63,28 @@
     color:#B40114;
 }
 
+.product-item{
+
+    position: relative;
+    width: 12%;
+    min-width: 200px;
+    color: grey;
+    margin-top: 13%;
+    margin-bottom: 13%;
+}
+
+.product-item img-fluid {
+    width: 100%;
+}
+
+.product-img:hover::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
