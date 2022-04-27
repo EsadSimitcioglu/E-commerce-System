@@ -18,9 +18,9 @@
 </head>
 
 <header>
-    <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light shadow-sm" >
+    <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand ms-5">
+            <a class="navbar-brand ms-5" href="customerHomepage.html">
                 <img src="images/Logo.svg" alt="" width="80" height="30">
             </a>
 
@@ -29,23 +29,13 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Home
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item text-center" href="#">Action ???</a></li>
-                            <li><a class="dropdown-item text-center" href="#">???</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link active text-danger" aria-current="page" href="customerHomepage.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="productsMenu.html">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Contact</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -63,28 +53,31 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownProfile">
                             <li><a class="dropdown-item text-center" href="loginPage.html">Login</a></li>
-                            <li><a class="dropdown-item text-center" href="#">My Orders</a></li>
-                            <li><a class="dropdown-item text-center" href="profile_settings.html">Profile Settings</a></li>
+                            <li><a class="dropdown-item text-center" href="myOrderPage.html">My Orders</a></li>
+                            <li><a class="dropdown-item text-center" href="profile_settings.html">Profile Settings</a>
+                            </li>
                             <li><a class="dropdown-item text-center" href="#">Store Owner Panel</a></li>
                             <a href="#" class="btn btn-outline-dark ms-5">Sign Out</a>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="file:///D:/VS%20Code/E-commerce-System/shoppingCart.html"><i class="bi bi-cart-fill"
-                                style="font-size: 25px;"></i></a>
+                        <a class="nav-link active" aria-current="page" href="shoppingCart.html"><i
+                                class="bi bi-cart-fill" style="font-size: 25px;"></i></a>
                     </li>
             </div>
         </div>
     </nav>
 
 </header>
+
 <body>
     <div class="main-image">
         <div class="container">
             <h1><span>One of the best e-commerce fashion shop</span></h1>
-            <span class="left">Our shop sells high-end, eco-conscious fashion <br> and accessories for men and women. Their
+            <span class="left">Our shop sells high-end, eco-conscious fashion <br> and accessories for men and women.
+                Their
                 product <br> descriptions match their style: sassy, yet classy.</span>
-            <a class="shopnow-button" href="#">SHOP NOW</a>
+            <a class="shopnow-button" href="#featured">SHOP NOW</a>
         </div>
     </div>
 
@@ -98,31 +91,35 @@
     <div class="container">
         <div class="row">
             <div class="description">
-                <h2>Featured selection</h2>
+                <h2 id="featured">Featured selection</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-6" align="center">
-                <div id = "1" class="product">
-                    <img class="img-fluid" src="images\unsplash_kfcKlY8KoXo.svg">
+                <div id="1" class="product">
+                    <!--After single product page implementation-->
+                    <a href="#"><img class="img-fluid" src="images\unsplash_kfcKlY8KoXo.svg"></a>
                     <div class="bottom">
-                        <h4><a href="#"><img class="cart" onclick = "addBasket(1)" src="images\Vector.svg" alt=""></a> $25.00</h4>
+                        <h4><a href="shoppingCart.html"><img class="cart" onclick="addBasket(1)" src="images\Vector.svg"
+                                    alt=""></a> $25.00</h4>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6" align="center">
-                <div id = "2" class="product">
-                    <img class="img-fluid" src="images\unsplash_PGTO_A0eLt4.svg">
+                <div id="2" class="product">
+                    <a href="#"><img class="img-fluid" src="images\unsplash_PGTO_A0eLt4.svg"></a>
                     <div class="bottom">
-                        <h4><a href="#"><img class="cart" onclick = "addBasket(2)" src="images\Vector.svg" alt=""></a> $25.00</h4>
+                        <h4><a href="shoppingCart.html"><img class="cart" onclick="addBasket(2)" src="images\Vector.svg"
+                                    alt=""></a> $25.00</h4>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6" align="center">
-                <div id = "3" class="product">
-                    <img class="img-fluid" src="images\unsplash_nvQemFKRBUo.svg">
+                <div id="3" class="product">
+                    <a href="#"><img class="img-fluid" src="images\unsplash_nvQemFKRBUo.svg"></a>
                     <div class="bottom">
-                        <h4><a href="#"><img class="cart" onclick = "addBasket(3)" src="images\Vector.svg" alt=""></a> $25.00</h4>
+                        <h4><a href="shoppingCart.html"><img class="cart" onclick="addBasket(3)" src="images\Vector.svg"
+                                    alt=""></a> $25.00</h4>
                     </div>
                 </div>
             </div>
@@ -144,15 +141,34 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-6" align="center">
                 <div class="product">
-                    <img class="img-fluid" src="images\unsplash_NOpsC3nWTzY.svg">
+                    <a href="#"><img class="img-fluid" src="images\unsplash_NOpsC3nWTzY.svg"></a>
                     <div class="bottom">
-                        <h4><a href="#"><img class="cart" src="images\Vector.svg" alt=""></a> $35.00</h4>
+                        <h4><a href="shoppingCart.html"><img class="cart" src="images\Vector.svg" alt=""></a> $35.00
+                        </h4>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6" align="center">
                 <div class="product">
-                    <img class="img-fluid" src="images\unsplash_kfcKlY8KoXo.svg">
+                    <a href="#"><img class="img-fluid" src="images\unsplash_kfcKlY8KoXo.svg"></a>
+                    <div class="bottom">
+                        <h4><a href="shoppingCart.html"><img class="cart" src="images\Vector.svg" alt=""></a> $25.00
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6" align="center">
+                <div class="product">
+                    <a href="#"><img class="img-fluid" src="images\unsplash_kfcKlY8KoXo.svg"></a>
+                    <div class="bottom">
+                        <h4><a href="shoppingCart.html"><img class="cart" src="images\Vector.svg" alt=""></a> $25.00
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6" align="center">
+                <div class="product">
+                    <a href="#"><img class="img-fluid" src="images\unsplash_kfcKlY8KoXo.svg"></a>
                     <div class="bottom">
                         <h4><a href="#"><img class="cart" src="images\Vector.svg" alt=""></a> $25.00</h4>
                     </div>
@@ -160,33 +176,19 @@
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6" align="center">
                 <div class="product">
-                    <img class="img-fluid" src="images\unsplash_kfcKlY8KoXo.svg">
+                    <a href="#"><img class="img-fluid" src="images\unsplash_kfcKlY8KoXo.svg"></a>
                     <div class="bottom">
-                        <h4><a href="#"><img class="cart" src="images\Vector.svg" alt=""></a> $25.00</h4>
+                        <h4><a href="shoppingCart.html"><img class="cart" src="images\Vector.svg" alt=""></a> $25.00
+                        </h4>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6" align="center">
                 <div class="product">
-                    <img class="img-fluid" src="images\unsplash_kfcKlY8KoXo.svg">
+                    <a href="#"><img class="img-fluid" src="images\unsplash_kfcKlY8KoXo.svg"></a>
                     <div class="bottom">
-                        <h4><a href="#"><img class="cart" src="images\Vector.svg" alt=""></a> $25.00</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6" align="center">
-                <div class="product">
-                    <img class="img-fluid" src="images\unsplash_kfcKlY8KoXo.svg">
-                    <div class="bottom">
-                        <h4><a href="#"><img class="cart" src="images\Vector.svg" alt=""></a> $25.00</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6" align="center">
-                <div class="product">
-                    <img class="img-fluid" src="images\unsplash_kfcKlY8KoXo.svg">
-                    <div class="bottom">
-                        <h4><a href="#"><img class="cart" src="images\Vector.svg" alt=""></a> $25.00</h4>
+                        <h4><a href="shoppingCart.html"><img class="cart" src="images\Vector.svg" alt=""></a> $25.00
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -196,7 +198,7 @@
     <br>
     <br>
     <br>
-    
+
 
 
     <div class="container" id="footer">
