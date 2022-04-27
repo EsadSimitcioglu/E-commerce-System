@@ -1,9 +1,13 @@
-
 let customerID = -1
-let customerEmail = "esad.simitcioglu@ozu.edu.tr"
+let customerEmail = sessionStorage.getItem("true")
 let infoEnable = false
 let passwordEnable = false
 
+
+
+console.log("Printing customer email: " + customerEmail)
+
+// console.log("Printing: " + sessionStorage.getItem("true"))
 
 window.onload = function() {
     axios.get(`http://localhost:8080/customer/profile/${customerEmail}`)
@@ -14,6 +18,8 @@ window.onload = function() {
         console.log(error);
     });
 };
+
+console.log(customerID)
 
 
 function infoEnabled(){
