@@ -1,0 +1,206 @@
+.row {
+    margin: 9% 4% 7% 4%;
+}
+
+#details {
+    margin-left: 8%;
+}
+
+h1 {
+    margin-top: 3%;
+    height: 32px;
+    left: 868px;
+    top: 223px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 32px;
+    color: #161850;
+}
+
+#price {
+    margin-top: 5%;
+    width: 97px;
+    height: 32px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 32px;
+    color: #B40114;
+}
+
+
+#greenButton {
+    padding: 2% 15% 2% 15%;
+    margin: 5% 15% 0% 0%;
+    background: #68B566;
+    border-radius: 0%;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+#dropdownMenuLink {
+    width: 90px;
+    height: 39px;
+    left: 868px;
+    top: 401px;
+    border: 1px solid #161850;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    color: #161850;
+    border-radius: 0%;
+}
+
+.labels {
+    margin-top: 7%;
+    width: 37px;
+    height: 20px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: #161850;
+
+}
+
+.dropdown-item {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    color: #161850;
+}
+
+.dropdownsize {
+    margin-top: 5%;
+}
+
+/* /////////////////////////////////////// */
+
+
+form {
+    width: 300px;
+}
+
+.value-button {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #161850;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    padding: 5px 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.value-button:hover {
+    cursor: pointer;
+}
+
+form #decrease {
+    border-right: 0px;
+    margin-right: -4px;
+    margin-top: -2px;
+}
+
+form #increase {
+    border-left: 0px;
+    margin-left: -4px;
+    margin-top: -2px;
+}
+
+input#number {
+    text-align: center;
+    border: 1px solid #161850;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: #161850;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.description {
+    margin-right: 30%;
+    margin-top: 2%;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #7A7A7A;
+}
+
+.rate {
+    height: 46px;
+    padding: 0 10px;
+    width: 130px;
+    height: 20px;
+    margin-left: -35px;
+    margin-top: -10px;
+}
+
+.rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+}
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+    content: '★ ';
+}
+
+.rate>input:checked~label {
+    color: #ffc700;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+    color: #deb217;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+    color: #c59b08;
+}
+
+.review {
+    margin-top: 5%;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #161850;
+}
