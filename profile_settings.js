@@ -1,18 +1,15 @@
 
-let customerID = -1
-let customerEmail = "esad.simitcioglu@ozu.edu.tr"
+var customerID = sessionStorage.getItem("ID")
+let customerEmail = sessionStorage.getItem("email")
 let infoEnable = false
 let passwordEnable = false
 
 
 window.onload = function() {
-    axios.get(`http://localhost:8080/customer/profile/${customerEmail}`)
-      .then(function (response) {
-        customerID = response.data
-      })
-      .catch(function (error) {
-        console.log(error);
-    });
+  document.getElementById("nameTextField").value = sessionStorage.getItem("firstName")
+  document.getElementById("surnameTextField").value = sessionStorage.getItem("lastName")
+  document.getElementById("emailTextField").value = customerEmail
+  document.getElementById("oldPasswordTextField").value = sessionStorage.getItem("password")
 };
 
 
@@ -36,7 +33,8 @@ function changePassword(){
     let password = document.getElementById("newPasswordTextField").value; 
     let rePassword = document.getElementById("reNewPasswordTextField").value; 
 
-    axios.get(`http://localhost:8080/customer/${customerID}`)
+   
+    axios.get(`http://localhost:8080/customer/${customerID}/password`)
       .then(function (response) {
         if(response.data != oldPassword) {
           alert("Old Password didn't match with your password")
@@ -52,16 +50,16 @@ function changePassword(){
         return
     }
 
-    axios.put(`http://localhost:8080/customer/password`), {
-        id: customerID, 
-        password: password, 
-    }
-    .then(function (response) {
+    axios.put('http://localhost:8080/customer/password', {
+        id: customerID,
+        password : password
+      })
+      .then(function (response) {
         console.log(response);
-    })
-    .catch(function (error) {
+      })
+      .catch(function (error) {
         console.log(error);
-    });
+      });
 }
 
 function changeInfo(){
@@ -69,18 +67,18 @@ function changeInfo(){
     let surname = document.getElementById("surnameTextField").value; 
     let email = document.getElementById("emailTextField").value; 
 
-    axios.put(`http://localhost:8080/customer/info`), {
-        id: customerID, 
-        name : name,
+    axios.put('http://localhost:8080/customer/info', {
+        id: customerID,
+        name: name, 
         surname: surname, 
-        email: email
-    }
-    .then(function (response) {
+        email : email
+      })
+      .then(function (response) {
         console.log(response);
-    })
-    .catch(function (error) {
+      })
+      .catch(function (error) {
         console.log(error);
-    });
+      });
 }
 
 function saveChanges(){

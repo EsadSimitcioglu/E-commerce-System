@@ -2,6 +2,10 @@
 var productIds = [];
 
 
+window.onload = function() {
+  console.log(sessionStorage.getItem("ID"))
+};
+
 
 function getFilterResearch() {
     
