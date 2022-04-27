@@ -1,9 +1,9 @@
 function signUp() {
-    let name = document.getElementById("nameTextField").value; 
-    let surname = document.getElementById("surnameTextField").value; 
-    let email = document.getElementById("emailTextField").value; 
-    let password = document.getElementById("passwordTextField").value; 
-    let rePassword = document.getElementById("rePasswordTextField").value; 
+    let name = document.getElementById("firstName").value; 
+    let surname = document.getElementById("lastName").value; 
+    let email = document.getElementById("Email").value; 
+    let password = document.getElementById("pass").value; 
+    let rePassword = document.getElementById("passAgain").value; 
 
 
     if(password != rePassword){

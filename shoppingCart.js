@@ -1,4 +1,9 @@
+
+var orderList = new Array()
+
 window.onload = function() {
-    var productIds = JSON.parse(sessionStorage.getItem("productIds")); //get them back
-    console.log(productIds)
+    orderList = JSON.parse(sessionStorage.getItem('orderList')); 
 };
+
+
+

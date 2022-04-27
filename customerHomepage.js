@@ -1,10 +1,32 @@
 
-var productIds = [];
+
+
+var myList = new Array();
+var orderList = new Array()
 
 
 window.onload = function() {
-  console.log(sessionStorage.getItem("ID"))
+  axios.get(`http://localhost:8080/products`)
+      .then(function (response) {
+        for(var i = 0;i<response.data.length;i++){
+          var products = new Object();
+          products.id = response.data[i].id
+          products.name = response.data[i].name
+          products.price = response.data[i].price
+          myList.push(products)
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+    });
 };
+
+function addBasket(id,name){
+  var obj = { "id": id, "name": name}
+  orderList.push(obj)
+  sessionStorage.setItem('orderList',JSON.stringify(orderList))
+}
+
 
 
 function getFilterResearch() {
@@ -16,8 +38,8 @@ function searchProduct() {
 
   axios.get(`http://localhost:8080/products/searchName/${keyword}`)
       .then(function (response) {
-        for(var i = 0;i<response.length;i++){
-          productIds.push(response[i])
+        for(var i = 0;i<response.data.length;i++){
+          
         }
       })
       .catch(function (error) {
@@ -26,10 +48,5 @@ function searchProduct() {
 }
 
 
-function addBasket(id){
-  productIds.push(id)
-  sessionStorage.setItem("productIds", JSON.stringify(productIds)); //store ids
-  console.log(productIds)
-}
 
 

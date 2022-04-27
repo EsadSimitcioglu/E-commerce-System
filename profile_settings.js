@@ -12,13 +12,23 @@ window.onload = function() {
   document.getElementById("oldPasswordTextField").value = sessionStorage.getItem("password")
 };
 
+function importFile(){
+  let input = document.createElement("input")
+  input.type = "file"
+  input.webkitdirectory = "true"
+
+  input.onchange = _this => {
+    console.log(URL.createObjectURL(input.files[0]))
+    document.getElementById("image").src = URL.createObjectURL(input.files[0])
+  }
+  input.click()
+}
 
 function infoEnabled(){
     document.getElementById("nameTextField").disabled = false
     document.getElementById("surnameTextField").disabled = false
     document.getElementById("emailTextField").disabled = false
     infoEnable = true
-
 }
 
 function passwordEnabled(){
