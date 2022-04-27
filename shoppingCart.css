@@ -81,3 +81,56 @@
     line-height: 16px;
 }
 
+form {
+    width: 300px;
+}
+
+.value-button {
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    padding: 5px 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.value-button:hover {
+    cursor: pointer;
+}
+
+form #decrease {
+    border-right: 0px;
+    margin-right: -4px;
+    margin-top: -2px;
+}
+
+form #increase {
+    border-left: 0px;
+    margin-left: -4px;
+    margin-top: -2px;
+}
+
+input#number {
+    text-align: center;
+    margin: 0px;
+    width: 32px;
+    height: 40px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: #161850;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
