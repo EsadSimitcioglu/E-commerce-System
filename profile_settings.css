@@ -1,77 +1,115 @@
 .body {
-    font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 #underline {
-    text-decoration: underline;
-    text-decoration-color: #C5C5C5;
-    text-underline-offset: 15px;
-    text-decoration-thickness: 2px;
+  text-decoration: underline;
+  text-decoration-color: #C5C5C5;
+  text-underline-offset: 15px;
+  text-decoration-thickness: 2px;
 }
 
 #top {
-    position: absolute;
-    width: 50%;
-    height: 5%;
-    left: 10%;
-    top: 75px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 30px;
-    color: #FFFFFF
-    
+  position: absolute;
+  width: 50%;
+  height: 5%;
+  left: 10%;
+  top: 75px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 30px;
+  color: #FFFFFF
 }
 
 .banner {
-    position: absolute;
-    background: rgba(69, 90, 100, 0.43);
-    opacity: 0.43;
-    width: 100%;
-    height: 191px;
-    left: 0%;
-    top: 60px;
+  position: absolute;
+  background: rgba(69, 90, 100, 0.43);
+  opacity: 0.43;
+  width: 100%;
+  height: 191px;
+  left: 0%;
+  top: 60px;
 }
 
 .first {
-    margin-top: 330px;
+  margin-top: 330px;
 }
 
 .container {
-    margin: 25%;
-    margin-top: 5%;
-    width: 50%;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 24px;
-  }
+  margin: 25%;
+  margin-top: 5%;
+  width: 50%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 24px;
+}
 
-  .label{
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 20px;
-  }
+.label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+}
 
-  .form-control {
-    border-radius: 0.5rem;
-  }
+.form-control {
+  border-radius: 0.5rem;
+}
 
-  .blueButtons {
-    border-radius: 10rem;
-    border: 3px solid #688691;
-    color: #688691;
-    font-family: 'Josefin Sans', sans-serif;
-    font-style: normal;
-  }
+.blueButtons {
+  border-radius: 10rem;
+  border: 3px solid #688691;
+  color: #688691;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 2vh;
+  text-align: center;
+  box-sizing: unset;
+  min-width: 30px;
+  max-width: 60%;
+}
 
-  .button {
-    background: #68B566;
-    border-radius: 0%;
-    width: 212px;
-    height: 44px;
-  }
+.button {
+  background: #68B566;
+  border-radius: 0%;
+  width: 212px;
+  height: 44px;
+}
 
-  
-  
+#balance {
+  width: 398px;
+  height: 180px;
+  background: #FFFFFF;
+  border: 2px solid #68B566;
+  box-sizing: border-box;
+  border-radius: 20px;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  color: #68B566;
+  text-align: center;
+}
 
+#pictureFrame {
+  text-align: center;
+  margin-bottom: 5%;
+  margin-left:-5%;
+}
+
+#walletBalance {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  margin-top: 30px;
+}
+
+#cash {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  margin-top: 5px;
+}
+
+#addButton {
+  width: 212px;
+  height: 44px;
+}
