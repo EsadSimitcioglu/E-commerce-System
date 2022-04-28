@@ -81,10 +81,10 @@
     <h1 id="top">Profile Settings</h1>
   </div>
 
-  <div class="mx-auto first" style="width: 463px">
+  <div class="mx-auto first" style="width: 58%">
     <div class="container-fluid ">
       <div class="row">
-        <div class="col">
+        <div class="col" id="pictureFrame">
           <svg width="189" height="189" viewBox="0 0 189 189" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <circle cx="94.5" cy="94.5" r="93" fill="url(#pattern0)" stroke="#688691" stroke-width="3" />
@@ -96,22 +96,35 @@
             </defs>
           </svg>
         </div>
-        <div class="col">
-          <div class="row">
-            <button type="button" onclick="importFile()" class="btn btn-outline-secondary mt-0 blueButtons">Change
-              picture</button>
+        <div class="col text-center" style="margin-bottom: 5%;">
+          <div class="row" id="button">
+            <button type="button" onclick="importFile()" class="btn btn-outline-secondary mt-0 blueButtons">Change picture</button>
           </div>
-          <div class="row">
+          <div class="row" id="button">
             <button id="editProfileButton" type="button" onclick="infoEnabled()"
               class="btn btn-outline-secondary mt-4 mb-4 blueButtons">Edit profile</button>
           </div>
-          <div class="row">
+          <div class="row" id="button">
             <button id="changePasswordButton" type="button" onclick="passwordEnabled()"
               class="btn btn-outline-secondary blueButtons">Change password</button>
           </div>
         </div>
+        <div class="col" id="balance">
+          <div class="row">
+            <p id="walletBalance">Wallet Balance</p>
+          </div>
+          <div class="row">
+            <p id="cash">$100</p>
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              <button type="button" id="addButton" class="btn btn-success button">ADD</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
   </div>
 
   <div class="container">
@@ -127,15 +140,12 @@
       </div>
     </div>
     <div class="row justify-content-center">
+      <div class="col filler"></div>
       <div class="col-sm-6 col-md-5 col-lg-5 mt-3">
         <label for="floatingInput" style="font-size: 20px;">E-mail</label>
         <input type="email" class="form-control" disabled id="emailTextField">
       </div>
       <div class="col filler"></div>
-      <div class="col-sm-6 col-md-5 col-lg-5 mt-3">
-        <label for="textInput" class="label">Phone number</label>
-        <input type="text" class="form-control" disabled id="textInput">
-      </div>
     </div>
     <div class="row" style="margin-top: 13%;">
       <div class="col md-3"></div>
