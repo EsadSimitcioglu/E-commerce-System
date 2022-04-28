@@ -7,10 +7,16 @@ window.onload = function() {
     document.getElementById("emailTextField").value = storeOwnerEmail
   };
 
-  function infoEnabled(){
+function infoEnabled(){
     document.getElementById("nameTextField").disabled = false
     document.getElementById("emailTextField").disabled = false
     infoEnable = true
+}
+
+function infoDisabled(){
+    document.getElementById("nameTextField").disabled = true
+    document.getElementById("emailTextField").disabled = true
+    infoEnable = false
 }
 
 function passwordEnabled(){
@@ -19,6 +25,13 @@ function passwordEnabled(){
     document.getElementById("reNewPasswordTextField").disabled = false
     passwordEnable = true
 }
+
+function passwordDisabled(){
+    document.getElementById("oldPasswordTextField").disabled = true
+    document.getElementById("newPasswordTextField").disabled = true
+    document.getElementById("reNewPasswordTextField").disabled = true
+    passwordEnable = false
+  }
 
 function changePassword(){
     let oldPassword = document.getElementById("oldPasswordTextField").value
@@ -47,6 +60,7 @@ function changePassword(){
         password : password
       })
       .then(function (response) {
+        alert("Password Are Changed")
         console.log(response);
       })
       .catch(function (error) {
@@ -63,6 +77,7 @@ function changeInfo(){
         email : email
       })
       .then(function (response) {
+        alert("Info's Are Changed")
         console.log(response);
       })
       .catch(function (error) {
@@ -74,9 +89,11 @@ function saveChanges(){
 
     if(infoEnable){
         changeInfo()
+        infoDisabled()
     }
     if(passwordEnable){
         changePassword()
+        passwordDisabled()
     }
 
 }

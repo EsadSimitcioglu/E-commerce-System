@@ -31,11 +31,25 @@ function infoEnabled(){
     infoEnable = true
 }
 
+function infoDisabled(){
+  document.getElementById("nameTextField").disabled = true
+  document.getElementById("surnameTextField").disabled = true
+  document.getElementById("emailTextField").disabled = true
+  infoEnable = false
+}
+
 function passwordEnabled(){
     document.getElementById("oldPasswordTextField").disabled = false
     document.getElementById("newPasswordTextField").disabled = false
     document.getElementById("reNewPasswordTextField").disabled = false
     passwordEnable = true
+}
+
+function passwordDisabled(){
+  document.getElementById("oldPasswordTextField").disabled = true
+  document.getElementById("newPasswordTextField").disabled = true
+  document.getElementById("reNewPasswordTextField").disabled = true
+  passwordEnable = false
 }
 
 function changePassword(){
@@ -65,6 +79,7 @@ function changePassword(){
         password : password
       })
       .then(function (response) {
+        alert("Password Are Changed")
         console.log(response);
       })
       .catch(function (error) {
@@ -84,6 +99,7 @@ function changeInfo(){
         email : email
       })
       .then(function (response) {
+        alert("Info's Are Changed")
         console.log(response);
       })
       .catch(function (error) {
@@ -95,9 +111,11 @@ function saveChanges(){
 
     if(infoEnable){
         changeInfo()
+        infoDisabled()
     }
     if(passwordEnable){
         changePassword()
+        passwordDisabled()
     }
 
 }
