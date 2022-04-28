@@ -36,6 +36,18 @@ a:active {
 #selected-text {
     color: #68B566;
 }
+.blueButtons {
+    border-radius: 10rem;
+    border: 3px solid #688691;
+    color: #688691;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-size: 2vh;
+    text-align: center;
+    box-sizing: unset;
+    min-width: 30px;
+    max-width: 60%;
+  }
 
 .button {
     background: #68B566;
