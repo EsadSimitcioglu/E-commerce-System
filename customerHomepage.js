@@ -1,4 +1,4 @@
-var myList = new Array();
+var productList = new Array();
 var orderList = new Array()
 
 window.onload = function() {
@@ -9,7 +9,7 @@ window.onload = function() {
           products.id = response.data[i].id
           products.name = response.data[i].name
           products.price = response.data[i].price
-          myList.push(products)
+          productList.push(products)
         }
       })
       .catch(function (error) {
@@ -17,20 +17,10 @@ window.onload = function() {
     });
 };
 
-function addBasket(id,name){
-  var obj = { "id": id, "name": name}
+function addBasket(id,name,price){
+  var obj = { "id": id, "name": name, "price" : price}
   orderList.push(obj)
   sessionStorage.setItem('orderList',JSON.stringify(orderList))
-}
-
-function getDetailsOfProducts(id){
-
-}
-
-
-
-function getFilterResearch() {
-    
 }
 
 function searchProduct() {
@@ -46,6 +36,11 @@ function searchProduct() {
         console.log(error);
     });
 }
+
+function getDetailsOfProducts(id){
+
+}
+
 
 
 
