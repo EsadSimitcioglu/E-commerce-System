@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -15,15 +15,15 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- my stylesheet -->
-    <link href="shoppingCart.css" rel="stylesheet">
+    <link href="SOPanelProductManagement.css" rel="stylesheet">
 
     <!-- icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <script src="shoppingCart.js"></script>
 
-    <title>Shopping Cart</title>
+    <title>Product Management</title>
 </head>
+
 <header>
     <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light shadow-sm">
         <div class="container-fluid">
@@ -78,106 +78,105 @@
 </header>
 
 <body>
-    <div class="banner">
-        <h1 id="top">Shopping Cart</h1>
-    </div>
-
-    <div class="container">
-        <div class="row" id="titles">
-            <div class="col-lg-2 col-md-2 col-sm-12">
-                <p class="text">Product</p>
+    <div class="container-fluid">
+        <div class="row" id="menu-row">
+            <div class="col-lg-3 col-md-3 col-sm-12 mt-15" id="menu">
+                <a href="SOPanelProductManagement.html">
+                    <p class="text" id="selected-text">Product Management</p>
+                </a>
+                <br>
+                <a href="#"><p class="text">Orders</p></a>
+                <br>
+                <a href="#"><p class="text">Invoices</p></a>
+                <br>
+                <a href="#"><p class="text">Campaigns</p></a>
+                <br>
+                <a href=""><p class="text">Verify Comments</p></a>
+                <br>
+                <a href=""><p class="text">Store Analysis</p></a>
+                <br>
+                <a href=""><p class="text">Settings</p></a>
             </div>
-
-            <div class="col-lg-2 col-md-2 col-sm-12"></div>
-
-            <div class="col-lg col-md col-sm-12">
-                <p class="text">Price</p>
-            </div>
-
-            <div class="col-lg col-md col-sm-12">
-                <p class="text">Quantity</p>
-            </div>
-
-            <div class="col-lg col-md col-sm-12">
-                <p class="text">Total</p>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <p class="text">Order Summary</p>
-            </div>
-        </div>
-
-        <div class="row" id="product-details">
-            <div class="col-8">
-                <div class="row border-bottom">
-                    <div class="col-lg-3 col-md-3 col-sm-12 m-auto">
+            <div class="col-lg-9 col-md-9 col-sm-12" id="details">
+                <div class="row justify-content-end">
+                    <div class="col-lg-9 col-md-9 col-sm-12">
+                        <p class="text"><button type="button" class="btn btn-success button" id="newProductButton">NEW
+                                PRODUCT</button></p>
+                    </div>
+                    <div class="col">
+                        <p class="text"><button type="button" class="btn btn-success button" id="saveChangesButton">SAVE
+                                CHANGES</button></p>
+                    </div>
+                </div>
+                <div class="row" id="titles">
+                    <div class="col-lg-2 col-md-2 col-sm-12">
+                        <p class="text">Product</p>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12">
+                        <p class="text">Name</p>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12">
+                        <p class="text">Details</p>
+                    </div>
+                    <div class="col">
+                        <p class="text">Size</p>
+                    </div>
+                    <div class="col">
+                        <p class="text">Color</p>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12">
+                        <p class="text">Quantity</p>
+                    </div>
+                    <div class="col">
+                        <p class="text">Price</p>
+                    </div>
+                </div>
+                <div class="row" id="product-details">
+                    <div class="col-lg-2 col-md-2 col-sm-12 m-auto">
                         <div class="product">
-                            <img class="img-fluid" src="images\unsplash_nvQemFKRBUo.svg">
+                            <img class="img-responsive" src="images\unsplash_NOpsC3nWTzY.svg" alt="Product image">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 m-auto">
-                        <p class="text text-start fs-6">Blue gold detailed bag</p>
-                        <p class="text text-start fs-6 text-secondary">Size: STD</p>
+                    <div class="col-lg-2 col-md-2 col-sm-12 m-auto">
+                        <div class="product">
+                            <p class="text">Carhartt WIP x Nike Collab</p>
+                        </div>
                     </div>
-                    <div class="col-lg-2 col-md col-sm-12 m-auto">
-                        <p class="text">$25</p>
+                    <div class="col-lg-2 col-md-2 col-sm-12 m-auto">
+                        <div class="product" id="bottom-box-details">
+                            <p class="text">For the first time ever, the Swoosh is teaming up with the classic workwear
+                                brand’s cooler.</p>
+                        </div>
                     </div>
-                    <div class="col-lg-2 col-md col-sm-12 m-auto">
+                    <div class="col m-auto">
+                        <div class="product">
+                            <p class="text">38</p>
+                        </div>
+                    </div>
+                    <div class="col m-auto">
+                        <div class="product">
+                            <p class="text">Brown</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12 m-auto">
                         <div class="row">
-                            <div class="col">
-                                <form>
-                                    <div class="value-button" id="decrease" onclick="decreaseValue()"
-                                        value="Decrease Value"><i class="fa-solid fa-circle-minus"
-                                            style="color:#161850"></i></div>
-                                    <input type="number" id="number" value="0" />
-                                    <div class="value-button" id="increase" onclick="increaseValue()"
-                                        value="Increase Value"><i class="fa-solid fa-circle-plus"
-                                            style="color:#161850"></i></div>
-                                </form>
-                            </div>
+                            <form>
+                                <div class="value-button" id="decrease" onclick="decreaseValue()"
+                                    value="Decrease Value"><i class="fa-solid fa-circle-minus"
+                                        style="color:#161850"></i></div>
+                                <input type="number" id="number" value="0" />
+                                <div class="value-button" id="increase" onclick="increaseValue()"
+                                    value="Increase Value"><i class="fa-solid fa-circle-plus" style="color:#161850"></i>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md col-sm-12 m-auto">
-                        <p class="text">$25</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-4">
-                <div class="row">
-                    <div class="row bg-light mx-4 m-auto" id="subtotal">
-                        <div class="col mt-4">
-                            <p class="text fs-6">Subtotal</p>
-                        </div>
-                        <div class="col mt-4">
-                            <p class="text fs-6">$250</p>
-                        </div>
-                    </div>
-                    <div class="row bg-light mx-4 m-auto" id="shipping">
-                        <div class="col mt-4">
-                            <p class="text fs-6">Shipping</p>
-                        </div>
-                        <div class="col mt-4">
-                            <p class="text fs-6">FREE</p>
-                        </div>
-                    </div>
-                    <div class="row bg-secondary bg-opacity-50 mx-4 m-auto" id="total">
-                        <div class="col mt-4">
-                            <p class="text fs-6">TOTAL</p>
-                        </div>
-                        <div class="col mt-4">
-                            <p class="text fs-6">$250</p>
-                        </div>
-                    </div>
-                    <div class="row mt-5 mx-4 m-auto" id="order-button">
-                        <button type="button" class="btn btn-success button" id="order-now">ORDER NOW</button>
+                    <div class="col m-auto">
+                        <p class="text">$35</p>
                     </div>
                 </div>
             </div>
-
         </div>
-
-
     </div>
 
     <!-- My JavaScript -->
@@ -186,6 +185,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
