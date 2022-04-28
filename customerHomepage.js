@@ -1,9 +1,5 @@
-
-
-
 var myList = new Array();
 var orderList = new Array()
-
 
 window.onload = function() {
   axios.get(`http://localhost:8080/products`)
@@ -25,6 +21,10 @@ function addBasket(id,name){
   var obj = { "id": id, "name": name}
   orderList.push(obj)
   sessionStorage.setItem('orderList',JSON.stringify(orderList))
+}
+
+function getDetailsOfProducts(id){
+
 }
 
 
