@@ -6,7 +6,8 @@
 //   $('.filter-button-group').on( 'click', 'button', function() {
 //     var filterValue = $(this).attr('data-filter');
 //     $grid.isotope({ filter: filterValue });
-//   });
+//   });  
+// it needs to be dynamic
 
 var orderList = new Array()
 
