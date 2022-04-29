@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="shoppingCart.js"></script>
-    <script src="connectWallet.js"></script>
+
     <title>Shopping Cart</title>
 </head>
 <header>
@@ -72,10 +72,6 @@
                                 class="bi bi-cart-fill" style="font-size: 25px;"></i></a>
                     </li>
             </div>
-            <div>
-                <input id = "connectWalletButton" type="button" onclick="connectWallet()" class="btn btn-outline-dark" value="Connect your Metamask wallet">
-                <input id = "donateButton" type="button" onclick="donate()" class="btn btn-outline-dark" value="Donate 0.1 ETH">
-            </div>
         </div>
     </nav>
 
@@ -115,36 +111,6 @@
             <div class="col-8">
                 <!-- From here -->
                 <div class="row border-bottom" id="shoppingCard">
-                    <div class="col-lg-3 col-md-3 col-sm-12 m-auto">
-                        <div class="product">
-                            <img class="img-fluid" src="images\unsplash_nvQemFKRBUo.svg">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 m-auto">
-                        <p class="text text-start fs-6">Blue gold detailed bag</p>
-                        <p class="text text-start fs-6 text-secondary">Size: STD</p>
-                    </div>
-                    <div class="col-lg-2 col-md col-sm-12 m-auto">
-                        <p class="text">$25</p>
-                    </div>
-                    <div class="col-lg-2 col-md col-sm-12 m-auto">
-                        <div class="row">
-                            <div class="col">
-                                <form>
-                                    <div class="value-button" id="decrease" onclick="decreaseValue()"
-                                        value="Decrease Value"><i class="fa-solid fa-circle-minus"
-                                            style="color:#161850"></i></div>
-                                    <input type="number" id="number" value="0" />
-                                    <div class="value-button" id="increase" onclick="increaseValue()"
-                                        value="Increase Value"><i class="fa-solid fa-circle-plus"
-                                            style="color:#161850"></i></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md col-sm-12 m-auto">
-                        <p class="text">$25</p>
-                    </div>
                 </div>
 
                 <!-- Up to here -->
