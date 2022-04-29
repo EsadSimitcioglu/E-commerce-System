@@ -26,6 +26,7 @@ function signUp() {
       });
     }
     else if(document.getElementById("storeOwnerOption").checked){
+        alert(1)
         axios.post('http://localhost:8080/storeOwner', {
         name: name, 
         surname: surname, 
