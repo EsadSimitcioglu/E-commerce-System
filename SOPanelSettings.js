@@ -5,7 +5,15 @@ let infoEnable = false
 let passwordEnable = false
 
 window.onload = function() {
-    document.getElementById("nameTextField").value = sessionStorage.getItem("storeName")
+  axios.get(`http://localhost:8080/store/${storeOwnerID}`)
+      .then(function (response) {
+        document.getElementById("nameTextField").value = response.data.name
+      })
+      .catch(function (error) {
+        console.log(error);
+    });
+
+    
     document.getElementById("emailTextField").value = storeOwnerEmail
   };
 

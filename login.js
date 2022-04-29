@@ -31,18 +31,18 @@ function login() {
     }
     else if(document.getElementById("storeOwnerOption").checked){
 
-      alert(1)
       axios.get(`http://localhost:8080/storeOwner/${email}`)
       .then(function (response) {
         if(response.data.password == password) {
           alert("Store OwnerLogged In")
+
+          console.log(response.data)
 
           sessionStorage.setItem("email",response.data.email)
           sessionStorage.setItem("password",response.data.password)
           sessionStorage.setItem("firstName",response.data.name)
           sessionStorage.setItem("lastName",response.data.surname)
           sessionStorage.setItem("ID",response.data.id)
-          sessionStorage.setItem("storeName",response.data.store.name)
 
           sessionStorage.setItem("userType","StoreOwner")
           location.href = "SOPanelProductManagement.html"
