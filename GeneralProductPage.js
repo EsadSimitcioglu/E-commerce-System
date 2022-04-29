@@ -10,7 +10,6 @@
 
 var orderList = new Array()
 
-
 window.onload = function() {
   axios.get(`http://localhost:8080/products`)
       .then(function (response) {
@@ -55,6 +54,9 @@ function addBasket(id,name,price){
 }
 
 function sortAscending() {
+  var allProducts = ""
+
+  console.log("Clicked ascending")
   axios.get(`http://localhost:8080/products/ascending`)
       .then(function (response) {
         for(var i = 0; i < response.data.length; i++) {
@@ -73,6 +75,9 @@ function sortAscending() {
 }
 
 function sortDescending() {
+  var allProducts = ""
+
+  console.log("Clicked descending")
   axios.get(`http://localhost:8080/products/descending`)
       .then(function (response) {
         for(var i = 0; i < response.data.length; i++) {
