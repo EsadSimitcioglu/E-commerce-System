@@ -57,37 +57,6 @@ function signUp() {
   document.getElementById("verificationCode").value = "" 
 }
 
-    if(document.getElementById("customerOption").checked){
-        axios.post('http://localhost:8080/customer', {
-        name: name, 
-        surname: surname, 
-        password : password,
-        email : email
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }
-    else if(document.getElementById("storeOwnerOption").checked){
-        alert(1)
-        axios.post('http://localhost:8080/storeOwner', {
-        name: name, 
-        surname: surname, 
-        password : password,
-        email : email
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }
-}
-
 function sendVerificationCode(){
 let email = document.getElementById("Email").value;
 if(document.getElementById("customerOption").checked){
@@ -112,4 +81,4 @@ else{
     console.log(error);
   });
 }
-
+}
