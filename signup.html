@@ -18,6 +18,7 @@
             background-size: 100%;
         }
     </style>
+    <script src="connectWallet.js"></script>
 </head>
 
 <header>
@@ -66,6 +67,10 @@
                         <a class="nav-link active" aria-current="page" href="shoppingCart.html"><i class="bi bi-cart-fill"
                                 style="font-size: 25px;"></i></a>
                     </li>
+            </div>
+            <div>
+                <input id = "connectWalletButton" type="button" onclick="connectWallet()" class="btn btn-outline-dark" value="Connect your Metamask wallet">
+                <input id = "donateButton" type="button" onclick="donate()" class="btn btn-outline-dark" value="Donate 0.1 ETH">
             </div>
         </div>
     </nav>
@@ -130,15 +135,18 @@
                                 required>
                             <label for="verificationCode">Verification Code</label>
                         </div>
-
-                        <div class="text-center my-4">
-                            <input type="button" class="btn btn-outline-dark" value="VERIFY">
+                        <div class="form-check mb-4 me-2">
+                            <input class="form-check-input" id="mfaOption" type="checkbox">
+                            <label class="form-check-label" for="mfaOption">
+                                Enable 2-Factor Authentication
+                            </label>
                         </div>
                         <div class="text-center my-4">
-                            <input type="button" onclick="signUp()" class="btn btn-outline-dark" value="REGISTER">
+                            <input type="button" onclick="sendVerificationCode()" class="btn btn-outline-dark" value="Send verification code">
                         </div>
-
-
+                        <div class="text-center my-4">
+                            <input type="button" onclick="signUp()" class="btn btn-outline-dark" value="Register">
+                        </div>
                     </form>
 
                 </div>

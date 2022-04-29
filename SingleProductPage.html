@@ -19,7 +19,7 @@
 
     <!-- icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
+    <script src="connectWallet.js"></script>
     <title>Single Product</title>
 </head>
 
@@ -69,6 +69,10 @@
                         <a class="nav-link active" aria-current="page" href="shoppingCart.html"><i class="bi bi-cart-fill"
                                 style="font-size: 25px;"></i></a>
                     </li>
+            </div>
+            <div>
+                <input id = "connectWalletButton" type="button" onclick="connectWallet()" class="btn btn-outline-dark" value="Connect your Metamask wallet">
+                <input id = "donateButton" type="button" onclick="donate()" class="btn btn-outline-dark" value="Donate 0.1 ETH">
             </div>
         </div>
     </nav>

@@ -13,7 +13,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="customerHomepage.js"></script>
-
+    <script src="connectWallet.js"></script>
     <title>Home</title>
 </head>
 
@@ -64,6 +64,10 @@
                         <a class="nav-link active" aria-current="page" href="shoppingCart.html"><i
                                 class="bi bi-cart-fill" style="font-size: 25px;"></i></a>
                     </li>
+            </div>
+            <div>
+                <input id = "connectWalletButton" type="button" onclick="connectWallet()" class="btn btn-outline-dark" value="Connect your Metamask wallet">
+                <input id = "donateButton" type="button" onclick="donate()" class="btn btn-outline-dark" value="Donate 0.1 ETH">
             </div>
         </div>
     </nav>
