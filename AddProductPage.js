@@ -27,11 +27,6 @@ function addItem(){
       .catch(function (error) {
         console.log(error);
       });
-
-
-    
-
-
 }
 
 function increaseValue() {
