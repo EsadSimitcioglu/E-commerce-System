@@ -1,6 +1,8 @@
-
 var storeOwnerEmail = sessionStorage.getItem("email")
 var storeOwnerID = sessionStorage.getItem("ID")
+
+let infoEnable = false
+let passwordEnable = false
 
 window.onload = function() {
     document.getElementById("nameTextField").value = sessionStorage.getItem("storeName")
@@ -8,13 +10,11 @@ window.onload = function() {
   };
 
 function infoEnabled(){
-    document.getElementById("nameTextField").disabled = false
     document.getElementById("emailTextField").disabled = false
     infoEnable = true
 }
 
 function infoDisabled(){
-    document.getElementById("nameTextField").disabled = true
     document.getElementById("emailTextField").disabled = true
     infoEnable = false
 }
@@ -39,7 +39,7 @@ function changePassword(){
     let rePassword = document.getElementById("reNewPasswordTextField").value; 
 
    
-    axios.get(`http://localhost:8080/storeOwner/${customerID}/password`)
+    axios.get(`http://localhost:8080/storeOwner/${storeOwnerID}/password`)
       .then(function (response) {
         if(response.data != oldPassword) {
           alert("Old Password didn't match with your password")
@@ -69,7 +69,6 @@ function changePassword(){
 }
 
 function changeInfo(){
-    let name = document.getElementById("nameTextField").value
     let email = document.getElementById("emailTextField").value; 
 
     axios.put('http://localhost:8080/storeOwner/info', {
