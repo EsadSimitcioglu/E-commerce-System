@@ -1,0 +1,82 @@
+.row {
+    margin: 9% 4% 7% 4%;
+}
+
+#details {
+    margin-left: 8%;
+}
+
+h1 {
+    margin-top: 3%;
+    height: 32px;
+    left: 868px;
+    top: 223px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 32px;
+    color: #161850;
+}
+
+h2 {
+    margin-top: 3%;
+    height: 32px;
+    left: 868px;
+    top: 223px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    color: #161850;
+}
+
+#price {
+    margin-top: 5%;
+    width: 97px;
+    height: 32px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 32px;
+    color: #B40114;
+}
+
+.labels {
+    margin-top: 7%;
+    width: 37px;
+    height: 20px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: #161850;
+
+}
+
+.dropdown-item {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    color: #161850;
+}
+
+/* /////////////////////////////////////// */
+
+
+form {
+    width: 300px;
+}
+
+.description {
+    margin-right: 30%;
+    margin-top: 2%;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #7A7A7A;
+}
