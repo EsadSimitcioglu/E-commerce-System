@@ -1,23 +1,21 @@
-
-
 function login() {
     let email = document.getElementById("Email").value
     let password = document.getElementById("pass").value
     let mfaCode = document.getElementById("code").value
-
+    
+  
     if(document.getElementById("customerOption").checked){
-
-
+      
       axios.post('http://localhost:8080/customer/mfa', {
         email: email,
         mfaCode: mfaCode
       })
-
+    
       axios.get(`http://localhost:8080/customer/${email}`)
       .then(function (response) {
-        if(response.data.password == password && response.data.canLogin) {
+        console.log(response.data)
+        if(response.data.password == password  && response.data.canLogin) {
           alert("Customer Logged In")
-
           sessionStorage.setItem("email",response.data.email)
           sessionStorage.setItem("password",response.data.password)
           sessionStorage.setItem("firstName",response.data.name)
@@ -41,14 +39,9 @@ function login() {
     }
     else if(document.getElementById("storeOwnerOption").checked){
 
-      axios.post('http://localhost:8080/customer/mfa', {
-        email: email,
-        mfaCode: mfaCode
-      })
-
       axios.get(`http://localhost:8080/storeOwner/${email}`)
       .then(function (response) {
-        if(response.data.password == password ) {
+        if(response.data.password == password) {
           alert("Store OwnerLogged In")
 
           console.log(response.data)
