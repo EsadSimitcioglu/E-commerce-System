@@ -2,28 +2,48 @@ var storeOwnerEmail = sessionStorage.getItem("email")
 var storeOwnerID = sessionStorage.getItem("ID")
 
 let infoEnable = false
+let storeEnable = false
 let passwordEnable = false
 
 window.onload = function() {
   axios.get(`http://localhost:8080/store/${storeOwnerID}`)
       .then(function (response) {
-        document.getElementById("nameTextField").value = response.data.name
+        let storeName = response.data.name
+        if(storeName != undefined){
+          document.getElementById("nameTextField").value = response.data.name
+          document.getElementById("newStore").disabled = true
+        }
+        else{
+          document.getElementById("nameTextField").value = ""
+          document.getElementById("newStore").disabled = false
+        }
+
       })
       .catch(function (error) {
         console.log(error);
     });
-
-    
     document.getElementById("emailTextField").value = storeOwnerEmail
-  };
+};
+
+function storeEnabled(){
+  document.getElementById("nameTextField").disabled = false
+  storeEnable = true
+}
+
+function storeDisable(){
+  document.getElementById("nameTextField").disabled = true
+  storeEnable = false
+}
 
 function infoEnabled(){
     document.getElementById("emailTextField").disabled = false
+    document.getElementById("nameTextField").disabled = false
     infoEnable = true
 }
 
 function infoDisabled(){
     document.getElementById("emailTextField").disabled = true
+    document.getElementById("nameTextField").disabled = true
     infoEnable = false
 }
 
@@ -78,10 +98,12 @@ function changePassword(){
 
 function changeInfo(){
     let email = document.getElementById("emailTextField").value; 
+    let storeName = document.getElementById("nameTextField").value; 
 
     axios.put('http://localhost:8080/storeOwner/info', {
         id: storeOwnerID,
-        email : email
+        email : email,
+        storeName : storeName
       })
       .then(function (response) {
         alert("Info's Are Changed")
@@ -92,6 +114,23 @@ function changeInfo(){
       });
 }
 
+function createNewStore(){
+  let storeName = document.getElementById("nameTextField").value; 
+
+  axios.post('http://localhost:8080/storeOwner/store', {
+        storeOwnerID: storeOwnerID,
+        storeName : storeName
+      })
+      .then(function (response) {
+        alert("Store Created")
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+}
+
+
 function saveChanges(){
 
     if(infoEnable){
@@ -101,6 +140,10 @@ function saveChanges(){
     if(passwordEnable){
         changePassword()
         passwordDisabled()
+    }
+    if(storeEnable){
+      createNewStore()
+      storeDisable()
     }
 
 }
