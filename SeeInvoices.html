@@ -79,7 +79,82 @@
 </header>
 
 <body>
-    
+    <div class="container">
+        <div class="row" id="details">
+            <div class="col-md-2">
+                <p class="label">Order ID:</p>
+            </div>
+            <div class="col-md-2">
+                <p class="label" id="invoiceData">#0001</p>
+            </div>
+            <div class="col-10"></div>
+        </div>
+        <div class="row" id="details">
+            <div class="col-md-2">
+                <p class="label">Customer name:</p>
+            </div>
+            <div class="col-md-2">
+                <p class="label" id="invoiceData">Alexandru Marian</p>
+            </div>
+            <div class="col-10"></div>
+        </div>
+        <div class="row" id="details">
+            <div class="col-md-2">
+                <p class="label">Order amount:</p>
+            </div>
+            <div class="col-md-2">
+                <p class="label" id="invoiceData">$99.00</p>
+            </div>
+            <div class="col-10"></div>
+        </div>
+        <div class="row" id="titles">
+            <div class="col"></div>
+            <div class="col-lg-2 col-md-2 col-sm-12">
+                <p class="text">Product</p>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12">
+                <p class="text">Details</p>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12">
+                <p class="text">Price</p>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12">
+                <p class="text">Quantity</p>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12">
+                <p class="text">Total</p>
+            </div>
+            <div class="col"></div>
+        </div>
+
+        <div class="row" id="product-details">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <!-- From here -->
+                <div class="row border-bottom" id="shoppingCard">
+                    <div class="col-lg-2 col-md-2 col-sm-12 m-auto">
+                        <div class="product">
+                            <img class="img-fluid" src="images\unsplash_nvQemFKRBUo.svg">
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12 m-auto">
+                        <p class="text text-start fs-6">Blue gold detailed bag</p>
+                        <p class="text text-start fs-6 text-secondary">Size: STD</p>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12 m-auto">
+                        <p class="text">$25</p>
+                    </div>
+                    <div class="col-lg-2 col-md col-sm-12 m-auto">
+                        <p class="text">1</p>
+                    </div>
+                    <div class="col-lg-2 col-md col-sm-12 m-auto">
+                        <p class="text">$25</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- My JavaScript -->
     <script src="SOPanelProductManagement.js"></script>
