@@ -37,8 +37,15 @@ window.onload = function() {
 };
 
 function addBasket(id,name,price){
-  console.log("Called")
-  var obj = { "id": id, "name": name, "price" : price}
+  var obj = { "id": id, "name": name, "price" : price, "quantity" : 1}
+
+  for(var i = 0;i<orderList.length;i++){
+    if(orderList[i].id == id){
+      orderList[i].quantity++
+      sessionStorage.setItem('orderList',JSON.stringify(orderList))
+      return
+    }
+  }
   orderList.push(obj)
   sessionStorage.setItem('orderList',JSON.stringify(orderList))
 }
