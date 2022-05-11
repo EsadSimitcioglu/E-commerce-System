@@ -1,6 +1,9 @@
+/* THIS CSS FILE IS USED BY ALL 3 PAGES FOR PM PANEL */
+
 #menu-row {
     margin: 9% 4% 7% 4%;
 }
+
 
 .container-fluid {
     font-family: 'Josefin Sans', sans-serif;
@@ -52,8 +55,23 @@ a:active {
 
 .product {
     vertical-align: middle;
+    min-width: 120px;
 }
 
 #bottom-box-details {
     font-size: 10px;
+}
+
+#rejectButton {
+    background-color: #B40114;
+}
+
+
+.product {
+    text-align: center;
+    padding: 12%;
+}
+
+#card {
+    margin-top: 3%;
 }
