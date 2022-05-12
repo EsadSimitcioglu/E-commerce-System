@@ -15,7 +15,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- my stylesheet -->
-    <link href="PlatformManager.css" rel="stylesheet">
+    <link href="../PlatformManager.css" rel="stylesheet">
 
     <!-- icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
@@ -26,7 +26,7 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
         $(function () {
-            $("#header").load("header.html");
+            $("#header").load("/CommonPages/Header.html");
         });
     </script>
 
@@ -39,15 +39,15 @@
     <div class="container-fluid">
         <div class="row" id="menu-row">
             <div class="col-lg-3 col-md-3 col-sm-12 mt-15" id="menu">
-                <a href="PMStoreConfirmation.html">
+                <a href="../PMStoreConfirmation/PMStoreConfirmation.html">
                     <p class="text">Store Confirmation</p>
                 </a>
                 <br>
-                <a href="PMProductManagement.html">
+                <a href="../PMProductManagement/PMProductManagement.html">
                     <p class="text">Product Management</p>
                 </a>
                 <br>
-                <a href="#">
+                <a href="../PMStoreManagement/PMStoreManagement.html">
                     <p class="text" id="selected-text">Store Management</p>
                 </a>
                 <br>
@@ -116,7 +116,7 @@
     </div>
 
     <!-- My JavaScript -->
-    <script src="SOPanelProductManagement.js"></script>
+    <script src="../../StoreOwner/SOProductManagement/SOProductManagement.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
