@@ -71,16 +71,6 @@
     color: rgba(22, 24, 80, 0.6);
 }
 
-.button {
-    background: #68B566;
-    border-radius: 0%;
-    font-family: 'Josefin Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 16px;
-}
-
 form {
     width: 300px;
 }
