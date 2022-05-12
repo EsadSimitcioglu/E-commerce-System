@@ -66,6 +66,9 @@ async function getStoreOfProduct(product){
   return store
 }
 
+async function createInvoice(customerId, storeOwnerId, productId) {
+  await axios.post(`http://localhost:8080/invoice')
+}
 function etherToWei(ether){
   return Number(ether * Math.pow(10, 18))
 }
