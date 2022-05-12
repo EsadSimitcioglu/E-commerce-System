@@ -1,5 +1,5 @@
 function signOut() {
     sessionStorage.clear()
-    location.href = "Login.html"
-
+    location.href = "../../CommonPages/LoginPage/Login.html"
+    z
 }
