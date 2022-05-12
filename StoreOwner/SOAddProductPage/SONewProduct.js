@@ -21,7 +21,7 @@ function addItem(){
       })
       .then(function (response) {
         alert("The Product Added")
-        location.href = "SOPanelProductManagement.html"
+        location.href = "../SOProductManagement/SOProductManagement.html"
         console.log(response);
       })
       .catch(function (error) {

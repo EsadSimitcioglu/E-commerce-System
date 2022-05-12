@@ -23,7 +23,7 @@ function signUp() {
     })
     .then(function (response) {
       console.log(response);
-      if(response.data == "loginPage.html")
+      if(response.data == "../LoginPage/login.html")
         alert("Registered succesfully !")
       else
         alert("Failed to register !")

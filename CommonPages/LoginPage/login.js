@@ -23,7 +23,7 @@ function login() {
           sessionStorage.setItem("ID",response.data.id)
 
           sessionStorage.setItem("userType","Customer")
-          location.href = "customerHomepage.html"
+          location.href = "../../Customer/CustomerHomePage/CustomerHome.html"
         }
         else  {
           console.log("Wrong credentials");
@@ -53,7 +53,7 @@ function login() {
           sessionStorage.setItem("ID",response.data.id)
 
           sessionStorage.setItem("userType","StoreOwner")
-          location.href = "SOPanelProductManagement.html"
+          location.href = "../../StoreOwner/SOProductManagement/SOProductManagement.html"
 
         }
         else {
