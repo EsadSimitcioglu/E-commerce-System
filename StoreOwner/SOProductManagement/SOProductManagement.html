@@ -46,23 +46,32 @@
                 <br>
                 <a href="../SOInvoices/SOInvoices.html"><p class="text">Invoices</p></a>
                 <br>
-                <a href="#"><p class="text">Campaigns</p></a>
-                <br>
                 <a href="#"><p class="text">Verify Comments</p></a>
-                <br>
-                <a href="#"><p class="text">Store Analysis</p></a>
                 <br>
                 <a href="../SOSettings/SOSettings.html"><p class="text">Settings</p></a>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12" id="details">
-                <div class="row justify-content-end">
-                    <div class="col-lg-9 col-md-9 col-sm-12">
-                        <p class="text"><button type="button" onclick = "newProduct()" class="btn btn-success button" id="newProductButton">NEW
-                                PRODUCT</button></p>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12" id="topButtons" style="margin-bottom: 4px;">
+                        <div class="dropdownsize">
+                            <a class="btn btn-outline-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Discount</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">10% Discount</a></li>
+                                <li><a class="dropdown-item" href="#">25% Discount</a></li>
+                                <li><a class="dropdown-item" href="#">30% Discount</a></li>
+                                <li><a class="dropdown-item" href="#">50% Discount</a></li>
+                                <li><a class="dropdown-item" href="#">70% Discount</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col">
-                        <p class="text"><button type="button" onclick = "saveChanges()"class="btn btn-success button" id="saveChangesButton">SAVE
-                                CHANGES</button></p>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <p class="text"><button type="button" id="topButtons" class="btn btn-success button" id="newProductButton">APPLY CAMPAIGN</button></p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12" id="topButtons">
+                        <p class="text"><button type="button" onclick = "newProduct()" class="btn btn-success button" id="newProductButton">NEW PRODUCT</button></p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <p class="text"><button type="button" id="topButtons" onclick = "saveChanges()"class="btn btn-success button" id="saveChangesButton">SAVE CHANGES</button></p>
                     </div>
                 </div>
                 <div class="row" id="titles">

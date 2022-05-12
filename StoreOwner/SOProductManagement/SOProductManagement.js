@@ -35,7 +35,7 @@ window.onload = function () {
 }
 
 function newProduct() {
-  location.href = "AddProductPage.html"
+  location.href = "/StoreOwner/SOAddProductPage/SONewProduct.html"
 }
 
 function saveChanges() {
