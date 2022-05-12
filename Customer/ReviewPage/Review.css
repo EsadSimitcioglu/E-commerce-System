@@ -61,17 +61,3 @@
     margin-top: 10%;
 }
 
-#greenButton {
-    width: 125px;
-    padding: 1% 2% 1% 2%;
-    margin: 5% 0% 0% 0%;
-    background: #68B566;
-    border-radius: 0%;
-    font-family: 'Josefin Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 16px;
-    color: #FFFFFF;
-
-}
