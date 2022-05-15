@@ -1,74 +1,135 @@
-async function connectWallet(){
-    sessionStorage.removeItem("wallet")
-    accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-    sessionStorage.setItem('wallet',accounts[0])
+async function connectWallet() {
+  sessionStorage.removeItem("wallet")
+  accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+  sessionStorage.setItem('wallet', accounts[0])
 }
 
-async function donate() {
-    await window.ethereum
-      .request({
-        method: 'eth_sendTransaction',
-        params: [
-          {
-            from: sessionStorage.getItem("walletAccounts"),
-            to: '0xd1662A85927ee6c18921BBD59CBa5060B20946c7',
-            value: Number(100000000000000000n).toString(16),
-            gasPrice: Number(2500000).toString(16),
-            gas: Number(21000).toString(16),
-          },
-        ],
-      })
-      .then((txHash) => console.log(txHash))
-      .catch((error) => console.error);
-}
+async function orderAll() {
+  const orders = JSON.parse(sessionStorage.getItem("orderList"))
+  const storeOwnerIds = await getStoreOwnerIdsOfOrders(orders)
+  addStoreOwnerIdsToOrders(storeOwnerIds, orders)
+  const ordersGroupByStoreOwnerId = groupByStoreOwnerId(orders)
 
-async function sendEther(storeOwnerAdress, totalEther){
-  let wei = etherToWei(totalEther)
-  await window.ethereum
-      .request({
-        method: 'eth_sendTransaction',
-        params: [
-          {
-            from: sessionStorage.getItem("walletAccounts"),
-            to: storeOwnerAdress,
-            value: wei.toString(16),
-            gasPrice: Number(2500000).toString(16),
-            gas: Number(21000).toString(16),
-          },
-        ],
-      })
-      .then((txHash) => console.log(txHash))
-      .catch((error) => console.log("Not accepted"));
-}
-
-async function order(){
-  let orders = JSON.parse(sessionStorage.getItem("orderList"))
-  for(let i = 0 ; i < orders.length ; i++) {
-    let storeOwner = await getStoreOwnerOfProduct(orders[i])
-    let walletAddress = storeOwner.walletAddress
-    sendEther(walletAddress, orders[i].price)
+  for (const [storeOwnerId, orders] of ordersGroupByStoreOwnerId.entries()) {
+    walletAddressOfStoreOwner = await getWalletAddressOfStoreOwner(storeOwnerId)
+    totalEtherPayment = calculateTotalPaymentToStoreOwner(orders)
+    try {
+      await sendEther(walletAddressOfStoreOwner, totalEtherPayment)
+      await createInvoice(orders)
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
 
-async function getStoreOwnerOfProduct(product){
-  return (await getStoreOfProduct(product)).storeOwner
+async function getStoreOwnerIdsOfOrders(list) {
+  const storeOwners = []
+  for (i = 0; i < list.length; i++) {
+    productId = list[i].id
+    await axios.get(`http://localhost:8080/store/product/${productId}`)
+      .then(function (response) {
+        storeOwners.push(response.data.storeOwner.id)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+  return storeOwners
 }
 
-async function getStoreOfProduct(product){
-  let productId = product.id
-  let store = await axios.get(`http://localhost:8080/store/product/${productId}`)
-  .then(function (response) {
-    return response.data
-  })
-  .catch(function (error) {
-    console.log(error);
+function addStoreOwnerIdsToOrders(storeOwnerIds, products) {
+  for (i = 0; i < products.length; i++) {
+    products[i]["storeOwnerId"] = storeOwnerIds[i]
+  }
+}
+
+function groupByStoreOwnerId(list) {
+  const map = new Map()
+  list.forEach((product) => {
+    const key = product.storeOwnerId
+    const collection = map.get(key);
+    if (!collection) {
+      map.set(key, [product]);
+    } else {
+      collection.push(product);
+    }
   });
-  return store
+  return map;
 }
 
-async function createInvoice(customerId, storeOwnerId, productId) {
-  await axios.post(`http://localhost:8080/invoice')
+async function getWalletAddressOfStoreOwner(storeOwnerId) {
+  const response = await axios.get(`http://localhost:8080/storeOwner/walletAddress/${storeOwnerId}`)
+  return response.data
 }
-function etherToWei(ether){
+
+function calculateTotalPaymentToStoreOwner(orders) {
+  totalPayment = 0.0
+  orders.forEach((order) => totalPayment += order.price * order.quantity)
+  return totalPayment
+}
+
+async function sendEther(storeOwnerAddress, totalEther) {
+  let wei = etherToWei(totalEther)
+  await window.ethereum
+    .request({
+      method: 'eth_sendTransaction',
+      params: [
+        {
+          from: sessionStorage.getItem("wallet"),
+          to: storeOwnerAddress,
+          value: wei.toString(16)
+        },
+      ],
+    })
+    .then((txHash) => console.log(txHash))
+    .catch(function (error) {
+      alert(error.message)
+      throw error
+    });
+}
+
+function etherToWei(ether) {
   return Number(ether * Math.pow(10, 18))
 }
+
+async function createInvoice(orders) {
+  productIds = await getProductIdsFromOrders(orders)
+  quantities = await getProductQuantitiesFromOrders(orders)
+  console.log(productIds)
+  console.log(quantities)
+  const data = JSON.stringify({
+    customerId: parseInt(sessionStorage.getItem("ID")),
+    storeOwnerId: parseInt(orders[0].storeOwnerId),
+    productIds: productIds,
+    quantities: quantities
+  })
+  const config = {
+    headers: { 'Content-Type': 'application/json' }
+  }
+  await axios.post('http://localhost:8080/invoice/', data, config)
+}
+
+async function getProductIdsFromOrders(orders) {
+  ids = []
+  for (i = 0; i < orders.length; i++) {
+    await ids.push(parseInt(orders[i].id))
+  }
+  return ids
+}
+
+async function getProductQuantitiesFromOrders(orders) {
+  quantities = []
+  for (i = 0; i < orders.length; i++) {
+    await quantities.push(parseInt(orders[i].quantity))
+  }
+  return quantities
+}
+
+function postOrder(order) {
+  axios.post('http://localhost:8080/customer/order', {
+    customer_id: sessionStorage.getItem('ID'),
+    product_id: orders[i].id,
+    quantity: orders[i].quantity
+  })
+}
+
