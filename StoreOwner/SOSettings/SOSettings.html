@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- my stylesheet -->
+    <link href="SOSettings.css" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- navbar -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $("#header").load("/CommonPages/Header.html");
+        });
+    </script>
+
+
+    <title>Settings</title>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container-fluid">
+        <div class="row" id="menu-row">
+            <div class="col-lg-3 col-md-3 col-sm-12 mt-15" id="menu">
+                <a href="../SOProductManagement/SOProductManagement.html">
+                    <p class="text">Product Management</p>
+                </a>
+                <br>
+                <a href="../SOOrders/SOOrders.html">
+                    <p class="text">Orders</p>
+                </a>
+                <br>
+                <a href="../SOInvoices/SOInvoices.html">
+                    <p class="text">Invoices</p>
+                </a>
+                <br>
+                <a href="../SOVerifyComments/SOVerifyComments.html">
+                    <p class="text">Verify Comments</p>
+                </a>
+                <br>
+                <a href="SOSettings.html">
+                    <p class="text" id="selected-text">Settings</p>
+                </a>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12" id="profile-settings">
+                <div class="container-fluid">
+                    <div class="row justify-content-end">
+                        <div class="col-lg-3 col-md-3 col-sm-12"></div>
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <svg width="189" height="189" viewBox="0 0 189 189" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <circle cx="94.5" cy="94.5" r="93" fill="url(#pattern0)" stroke="#688691"
+                                    stroke-width="3" />
+                                <defs>
+                                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0_187_176"
+                                            transform="translate(-0.25) scale(0.003125)" />
+                                    </pattern>
+                                    <image id="image" width="480" height="320" />
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <div class="row">
+                                <button type="button" onclick="importFile()"
+                                    class="btn btn-outline-secondary mt-0 blueButtons">Change logo</button>
+                            </div>
+                            <div class="row">
+                                <button id="editProfileButton" type="button" onclick="infoEnabled()"
+                                    class="btn btn-outline-secondary mt-4 mb-4 blueButtons">Edit profile</button>
+                            </div>
+                            <div class="row">
+                                <button id="changePasswordButton" type="button" onclick="passwordEnabled()"
+                                    class="btn btn-outline-secondary mb-4 blueButtons">Change password</button>
+                            </div>
+                            <div class="row">
+                                <button id="newStore" type="button" onclick="storeEnabled()"
+                                    class="btn btn-outline-secondary blueButtons">New Store</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12"></div>
+
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row mt-5">
+                        <div class="col-lg-2"></div>
+                        <div class="col">
+                            <label for="textInput" class="label">Store Name</label>
+                            <input type="text" class="form-control" disabled id="nameTextField">
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col">
+                            <label for="floatingInput">E-mail</label>
+                            <input type="email" class="form-control" disabled id="emailTextField">
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 5%;">
+                    <div class="col md-3"></div>
+                    <div class="col-auto">
+                        <p id="underline" style="font-size: 20px;">CHANGE PASSWORD</p>
+                    </div>
+                    <div class="col md-3"></div>
+                </div>
+                <div class="row" style="margin-top: 2%;">
+                    <div class="col justify-content-center" style="margin-left: 35%; margin-right: 35%;">
+                        <label for="inputPassword6">Old Password</label>
+                        <input type="password" disabled id="oldPasswordTextField" class="form-control"
+                            aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 20%; margin-right: 20%;">
+                    <div class="col-sm-6 col-md-5 col-lg-5 mt-3">
+                        <label for="inputPassword6">New Password</label>
+                        <input type="password" disabled id="newPasswordTextField" class="form-control"
+                            aria-describedby="passwordHelpInline">
+                    </div>
+                    <div class="col"></div>
+                    <div class="col-sm-6 col-md-5 col-lg-5 mt-3">
+                        <label for="inputPassword6">New Password Again</label>
+                        <input type="password" disabled id="reNewPasswordTextField" class="form-control"
+                            aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row" style="text-align: center;">
+                    <div class="col-sm-12 col-md-12 lg-12 mt-5">
+                        <button type="button" onclick="saveChanges()" class="btn btn-success button">SAVE
+                            CHANGES</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="SOSettings.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+</body>
+
+</html>

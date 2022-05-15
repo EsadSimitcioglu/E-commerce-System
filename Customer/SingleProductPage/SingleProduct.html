@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- my stylesheet -->
+    <link href="SingleProduct.css" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="crypto.js"></script>
+
+    <!-- navbar -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $("#header").load("/CommonPages/Header.html");
+        });
+    </script>
+    
+    <title>Single Product</title>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <img class="img-responsive" src="/images/unsplash_NOpsC3nWTzY.svg" alt="Product image">
+            </div>
+            <div class="col" id="details">
+                <h1>Carhartt WIP x Nike Collab</h1>
+                <br>
+                <p id="shop-name">Shoe World</p>
+                <p class="text"><button type="button" class="btn btn-success button" id="greenButton">ADD TO
+                        CART</button></p>
+                <p id="price">35.00$</p>
+                <div class="dropdownsize">
+                    <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Size
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="">39</a></li>
+                        <li><a class="dropdown-item" href="#">40</a></li>
+                        <li><a class="dropdown-item" href="#">41</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="labels">Quantity</p>
+                    <form>
+                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                        <input type="number" id="number" value="0" />
+                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                    </form>
+                </div>
+                <br>
+                <p class="description">
+                    For the first time ever, the Swoosh is teaming up with the classic workwear brand’s cooler and much
+                    hipper sub-label—Carhartt WIP—for four sneakers, each of which mix iconic Nike silhouettes with
+                    timeless work-ready materials.
+                </p>
+                <br>
+                <a href="/Customer/SingleProductReviewPage/SingleProductReview.html" class="btn btn-outline-success mt-4">See Comments</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- My JavaScript -->
+    <script src="SingleProduct.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

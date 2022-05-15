@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="../../bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="login.js"></script>
+  <script src="../Crypto.js"></script>
+
+  <!-- navbar -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      $("#header").load("../Header.html");
+    });
+  </script>
+
+  <style>
+    .bg-image {
+      background-image: url("/images/rafiki.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Left half of the page -->
+      <div class="col-md-6 bg-image vh-100"></div>
+      <!-- Right half of the page -->
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <div class="w-75">
+          <h3 class="mb-5">Choose account type</h3>
+          <!-- Platform Manager, Owner and Customer options -->
+          <div class="d-flex justify-content-center">
+            <div class="form-check mb-4 me-2">
+              <input class="form-check-input" id="managerOption" type="radio" name="flexRadioDefault" id="managerOption"
+                checked>
+              <label class="form-check-label" for="customerOption">
+                <img src="/images/Platform Manager.svg" class="img-fluid">
+              </label>
+            </div>
+            <div class="form-check mb-4 me-2">
+              <input class="form-check-input" id="storeOwnerOption" type="radio" name="flexRadioDefault"
+                id="storeOwnerOption" checked>
+              <label class="form-check-label" for="storeOwnerOption">
+                <img src="/images/Store Owner Option.svg" class="img-fluid">
+              </label>
+            </div>
+            <div class="form-check mb-4">
+              <input class="form-check-input" id="customerOption" type="radio" name="flexRadioDefault"
+                id="customerOption" checked>
+              <label class="form-check-label" for="customerOption">
+                <img src="/images/Customer Option.svg" class="img-fluid">
+              </label>
+            </div>
+
+          </div>
+
+          <!-- E-mail, password and login buttons -->
+          <form action="">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="Email" placeholder="something@example.com" required>
+              <label for="Email">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="pass" placeholder="Password" required>
+              <label for="pass">Password</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="code" placeholder="Code">
+              <label for="code">2FA</label>
+            </div>
+            <div class="text-center my-4">
+              <input type="button" onclick="login()" class="btn btn-outline-dark" value="LOGIN">
+            </div>
+            <div class="text-center">
+              <p>Don't you have an account?
+                <a href="../SignUpPage/SignUp.html" class="link-success">Sign up!</a>
+              </p>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popper.js"></script>
+  <script src="../../bootstrap.js"></script>
+</body>
+
+</html>

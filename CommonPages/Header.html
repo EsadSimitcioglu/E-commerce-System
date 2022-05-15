@@ -1,0 +1,56 @@
+<header>
+  <script src="/CommonPages/Header.js"></script>
+    <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-5" href="/Customer/CustomerHomePage/CustomerHome.html">
+          <img src="/images/Logo.svg" alt="" width="80" height="30">
+        </a>
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-danger" aria-current="page" href="/Customer/CustomerHomePage/CustomerHome.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/Customer/GeneralProductPage/GeneralProduct.html">Products</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control" type="search" placeholder="" aria-label="Search">
+            <div class="input-group-btn">
+              <button class="btn btn-dark" type="submit">
+                <i class="bi bi-search" style="color: white;"></i></button>
+            </div>
+          </form>
+          <ul class="navbar-nav me-5 mb-2 mb-lg-0">
+            <li class="nav-item dropdown mx-2">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProfile" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-fill" style="font-size: 25px; color: black;"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownProfile">
+                <li><a class="dropdown-item text-center" href="/CommonPages/LoginPage/Login.html">Login</a></li>
+                <li><a class="dropdown-item text-center" href="/Customer/MyOrderPage/MyOrder.html">My Orders</a></li>
+                <li><a class="dropdown-item text-center" href="/CommonPages/ProfileSettings/ProfileSettings.html">Profile Settings</a></li>
+                <li><a class="dropdown-item text-center" href="/StoreOwner/SOProductManagement/SOProductManagement.html">Store Owner Panel</a></li>
+                <li><a class="dropdown-item text-center" href="/PlatformManager/PMProductManagement/PMProductManagement.html">Platform Manager Panel</a></li>
+                <a href="#" onclick = "signOut()" class="btn btn-outline-dark ms-5">Sign Out</a>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/Customer/ShoppingCartPage/ShoppingCart.html"><i class="bi bi-cart-fill"
+                  style="font-size: 25px;"></i></a>
+            </li>
+        </div>
+        <div>
+          <input id = "connectWalletButton" type="button" onclick="connectWallet()" class="btn btn-outline-dark" value="Connect your Metamask wallet">
+          <input id = "donateButton" type="button" onclick="donate()" class="btn btn-outline-dark" value="Donate 0.1 ETH">
+        </div>
+      </div>
+    </nav>
+  
+  </header>
