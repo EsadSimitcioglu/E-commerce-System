@@ -46,7 +46,7 @@
                 <br>
                 <a href="../SOInvoices/SOInvoices.html"><p class="text">Invoices</p></a>
                 <br>
-                <a href="../SOVerifyComments/SOVerifyComments.html"><p class="text">Verify Comments</p></a>
+                <a href="#"><p class="text">Verify Comments</p></a>
                 <br>
                 <a href="../SOSettings/SOSettings.html"><p class="text">Settings</p></a>
             </div>
@@ -54,18 +54,17 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-12" id="topButtons" style="margin-bottom: 4px;">
                         <div class="dropdownsize">
-                            <a class="btn btn-outline-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Discount</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">10% Discount</a></li>
-                                <li><a class="dropdown-item" href="#">25% Discount</a></li>
-                                <li><a class="dropdown-item" href="#">30% Discount</a></li>
-                                <li><a class="dropdown-item" href="#">50% Discount</a></li>
-                                <li><a class="dropdown-item" href="#">70% Discount</a></li>
-                            </ul>
+                            <select class="btn btn-outline-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <option class="dropdown-item" value="0">0%</option>
+                                <option class="dropdown-item" value="25">25%</option>
+                                <option class="dropdown-item" value="50">50%</option>
+                                <option class="dropdown-item" value="75">75%</option>
+                                <option class="dropdown-item" value="100">100%</option>
+                              </select>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12">
-                        <p class="text"><button type="button" id="topButtons" class="btn btn-success button" id="newProductButton">APPLY CAMPAIGN</button></p>
+                        <p class="text"><button type="button" id="topButtons" onclick = "applyDiscount()" class="btn btn-success button" id="newProductButton">APPLY CAMPAIGN</button></p>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12" id="topButtons">
                         <p class="text"><button type="button" onclick = "newProduct()" class="btn btn-success button" id="newProductButton">NEW PRODUCT</button></p>
