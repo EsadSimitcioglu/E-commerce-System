@@ -70,6 +70,12 @@ function getDetailsOfProducts(id){
 
 }
 
+function colorChange() {
+  document.getElementById('cartIcon').style.color = "red";
+  setTimeout(function () {
+    document.getElementById('cartIcon').style.color = "black";
+  }, 1000);
+}
 
 
 
