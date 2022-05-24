@@ -24,6 +24,8 @@
     <!-- navbar -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="PMProductManagement.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         $(function () {
             $("#header").load("/CommonPages/Header.html");
@@ -77,11 +79,11 @@
                             <p class="text" style="margin-top: 37%;">Nike Air Force Shoes</p>
                         </div>
                         <div class="col">
-                            <p class="text"><button type="button" class="btn btn-success button" id="acceptButton"
+                            <p class="text"><button onclick="suspend()" type="button" class="btn btn-success button" id="acceptButton"
                                     style="margin-top: 25%;">SUSPEND</button></p>
                         </div>
                         <div class="col">
-                            <p class="text"><button type="button" class="btn btn-success button" id="rejectButton"
+                            <p class="text"><button onclick="unsuspend()" type="button" class="btn btn-success button" id="rejectButton"
                                     style="margin-top: 25%;">UNSUSPEND</button></p>
                         </div>
                     </div>

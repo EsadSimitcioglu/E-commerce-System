@@ -12,8 +12,6 @@ function shipped() {
       });
 
       alert("Status changed to SHIPPED")
-
-    
 }
 
 
