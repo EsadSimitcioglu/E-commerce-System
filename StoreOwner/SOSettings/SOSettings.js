@@ -6,6 +6,13 @@ let storeEnable = false
 let passwordEnable = false
 
 window.onload = function() {
+  const fileSelector = document.getElementById('file-selector');
+  fileSelector.addEventListener('change', (event) => {
+    const fileList = event.target.files;
+    var img = document.createElement('img');
+    img.src = 'https://media.geeksforgeeks.org/wp-content/uploads/20190529122828/bs21.png';
+    document.getElementById('roundedImage').appendChild(img);
+  });
   axios.get(`http://localhost:8080/store/${storeOwnerID}`)
       .then(function (response) {
         let storeName = response.data.name
@@ -129,7 +136,6 @@ function createNewStore(){
         console.log(error);
       });
 }
-
 
 function saveChanges(){
 

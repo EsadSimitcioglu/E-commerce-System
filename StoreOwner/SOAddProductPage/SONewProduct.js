@@ -1,3 +1,19 @@
+
+window.addEventListener('load', function() {
+  document.querySelector('input[type="file"]').addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+          var img = document.getElementById('image01');
+          console.log(img)
+          img.onload = () => {
+              URL.revokeObjectURL(img.src);  // no longer needed, free memory
+          }
+          img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+      }
+  });
+});
+
+
+
 function addItem(){
 
     var productName = document.getElementById("nameTextField").value
@@ -42,4 +58,8 @@ function increaseValue() {
     value < 1 ? value = 1 : '';
     value--;
     document.getElementById('number').value = value;
+  }
+
+  function importFile() {
+    
   }
