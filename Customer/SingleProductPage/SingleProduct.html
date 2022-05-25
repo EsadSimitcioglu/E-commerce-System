@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script src="crypto.js"></script>
 
+    <!-- Jquery for the add to cart animation -->
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+
     <!-- navbar -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -29,6 +32,9 @@
             $("#header").load("/CommonPages/Header.html");
         });
     </script>
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     
     <title>Single Product</title>
 </head>
@@ -44,19 +50,18 @@
                 <h1>Carhartt WIP x Nike Collab</h1>
                 <br>
                 <p id="shop-name">Shoe World</p>
-                <p class="text"><button type="button" class="btn btn-success button" id="greenButton">ADD TO
+                <p class="text"><button type="button" class="btn btn-success button" id="greenButton" onclick="colorChange()">ADD TO
                         CART</button></p>
                 <p id="price">35.00$</p>
                 <div class="dropdownsize">
-                    <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Size
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="">39</a></li>
-                        <li><a class="dropdown-item" href="#">40</a></li>
-                        <li><a class="dropdown-item" href="#">41</a></li>
-                    </ul>
+                    <select class="form-select" id="dropdownMenuLink" aria-label="Default select example">
+                        <option selected>Size</option>
+                        <option value="1">39</option>
+                        <option value="2">40</option>
+                        <option value="3">41</option>
+                        <option value="4">41</option>
+                        <option value="5">43</option>
+                    </select>
                 </div>
                 <div>
                     <p class="labels">Quantity</p>
@@ -77,6 +82,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- My JavaScript -->
     <script src="SingleProduct.js"></script>

@@ -29,3 +29,12 @@ window.onload = function() {
         console.log(error);
     });
 };
+
+// changing header cart color when an item is added
+
+function colorChange() {
+  document.getElementById('cartIcon').style.color = "red";
+  setTimeout(function () {
+    document.getElementById('cartIcon').style.color = "black";
+  }, 1000);
+}
