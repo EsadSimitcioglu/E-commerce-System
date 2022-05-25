@@ -64,19 +64,19 @@
             <div class="col" id="productInformationPart">
                 <div class="row justify-content-center mb-4">
                     <label for="textInput" class="label">Product Name</label>
-                    <input type="text" class="form-control" disabled id="nameTextField">
+                    <input type="text" class="form-control" id="nameTextField">
                 </div>
                 <div class="row justify-content-center mb-4">
                     <label for="textInput" class="label">Price</label>
-                    <input type="text" class="form-control" disabled id="nameTextField">
+                    <input type="text" class="form-control" id="priceTextField">
                 </div>
                 <div class="row mb-4">
-                    <select class="form-select" aria-label="Default select example">
+                    <select id = "language" class="form-select" aria-label="Default select example">
                         <option selected>Select category</option>
-                        <option value="1">Clothes</option>
-                        <option value="2">Shoes</option>
-                        <option value="3">Bags</option>
-                        <option value="4">Accessories</option>
+                        <option value="CLOTHES">Clothes</option>
+                        <option value="SHOES">Shoes</option>
+                        <option value="BAGS">Bags</option>
+                        <option value="ACCESSORIES">Accessories</option>
                       </select>
                 </div>
                 <div class="row mb-4">
@@ -89,8 +89,7 @@
                 </div>
                 <div class="row mb-4">
                     <p class="labels">Description</p>
-                    <input type="text" class="form-control" disabled id="nameTextField">
-
+                    <textarea type="text" id="descriptionTextField" class="description" rows="10" cols="30"></textarea>
                 </div>
                 <div class="row">
                     <p class="text"><button type="button" id="topButtons" onclick = "saveChanges()"class="btn btn-success button" id="addItemButton">ADD ITEM</button></p>

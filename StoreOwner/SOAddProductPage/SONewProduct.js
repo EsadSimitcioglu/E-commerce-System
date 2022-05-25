@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
 
 
 
-function addItem(){
+function saveChanges(){
 
     var productName = document.getElementById("nameTextField").value
     var productPrice = document.getElementById("priceTextField").value
@@ -22,6 +22,8 @@ function addItem(){
     var productDescription = document.getElementById("descriptionTextField").value
     var select = document.getElementById('language');
     var productType = select.options[select.selectedIndex].value;
+    var suspended = "WAITING"
+    var review = 0
 
     var storeObject = new Object()
 
@@ -33,7 +35,9 @@ function addItem(){
         quantity: productQuantity, 
         type : productType,
         description: productDescription,
-        store : storeObject
+        store : storeObject,
+        suspended: suspended,
+        review : review,
       })
       .then(function (response) {
         alert("The Product Added")

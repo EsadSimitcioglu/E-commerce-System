@@ -23,7 +23,7 @@ window.onload = function() {
 function acceptStore(storeId) {
     axios.put('http://localhost:8080/store/confirmation',{
         storeId : storeId,
-        storeConfirmationType: "CONFIRMED", 
+        storeConfirmationType: "ACCEPTED", 
       })
       .then(function (response) {
         alert("The Store CONFIRMED")
