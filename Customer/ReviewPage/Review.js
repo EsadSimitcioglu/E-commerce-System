@@ -29,29 +29,6 @@ function onSend() {
 
 
 
-
-
-    // var commentId
-    // console.log("POST EXECUTED")
-
-
-    // axios.get('http://localhost:8080/comments/max/id')
-    //     .then(function(response) {
-    //         console.log(response.data)
-    //         commentId = response.data   
-
-    //         axios.all([
-    //             axios.put(`http://localhost:8080/comments/customer/1/product/1/comment/${commentId - 1}`, {})
-    //         ])
-    //     })
-    //     .catch(function (error) {
-    //         console.log(error);
-    //     }
-    // );
-
-    // // axios.put('http://localhost:8080/comments/customer/1/product/1/comment/1', {})
-
     alert("Review was saved")
-    // Selected 5 stars
 
 }
