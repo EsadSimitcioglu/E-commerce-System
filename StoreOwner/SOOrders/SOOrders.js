@@ -1,3 +1,13 @@
+function cancerOrder(orderId){
+    axios.delete(`http://localhost:8080/customerOrder/${orderId}`)
+      .then(function (response) {
+        console.log(response)    
+      }).catch(function (error) {
+        console.log(error);
+      });
+
+    }
+
 function shipped() {
     console.log("shipped");
     axios.put('http://localhost:8080/customerOrder/updateStatus/1/status/SHIPPED', {
@@ -48,3 +58,4 @@ function inProcess() {
 
     alert("Status changed to IN PROCESS")
 }
+

@@ -45,13 +45,14 @@
                         <circle cx="94.5" cy="94.5" r="93" fill="url(#pattern0)" stroke="#688691" stroke-width="3" />
                         <defs>
                             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                <use xlink:href="#image0_187_176" transform="translate(-0.25) scale(0.003125)" />
+                                <use xlink:href="#image01" transform="translate(-0.25) scale(0.003125)" />
                             </pattern>
-                            <image id="image" width="480" height="320" />
+                            <image src="#" id="image01" width="480" height="320" />
                         </defs>
                     </svg>
                 </div>
                 <div class="row justify-content-center mx-5" id="uploadFileButton">
+                    <input type='file' />
                     <button type="button" onclick="importFile()"
                         class="btn btn-outline-secondary mt-0 blueButtons">Upload Photo</button>
                 </div>
@@ -63,20 +64,21 @@
             <div class="col" id="productInformationPart">
                 <div class="row justify-content-center mb-4">
                     <label for="textInput" class="label">Product Name</label>
-                    <input type="text" class="form-control" disabled id="nameTextField">
+                    <input type="text" class="form-control" id="nameTextField">
                 </div>
                 <div class="row justify-content-center mb-4">
                     <label for="textInput" class="label">Price</label>
-                    <input type="text" class="form-control" disabled id="nameTextField">
+                    <input type="text" class="form-control" id="priceTextField">
                 </div>
                 <div class="row mb-4">
-                    <select class="form-select" aria-label="Default select example">
+                    <select id = "language" class="form-select" aria-label="Default select example">
                         <option selected>Select category</option>
-                        <option value="1">Clothes</option>
-                        <option value="2">Shoes</option>
-                        <option value="3">Bags</option>
-                        <option value="4">Accessories</option>
-                    </select>
+                        <option value="CLOTHES">Clothes</option>
+                        <option value="SHOES">Shoes</option>
+                        <option value="BAGS">Bags</option>
+                        <option value="ACCESSORIES">Accessories</option>
+                      </select>
+
                 </div>
                 <div class="row mb-4">
                     <p class="labels">Quantity</p>
@@ -88,8 +90,7 @@
                 </div>
                 <div class="row mb-4">
                     <p class="labels">Description</p>
-                    <input type="text" class="form-control" disabled id="nameTextField">
-
+                    <textarea type="text" id="descriptionTextField" class="description" rows="10" cols="30"></textarea>
                 </div>
                 <div class="row">
                     <p class="text"><button type="button" id="topButtons" onclick = "saveChanges()"class="btn btn-success button" id="addItemButton">ADD ITEM</button></p>
