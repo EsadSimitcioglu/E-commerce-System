@@ -22,7 +22,7 @@ function saveChanges(){
     var productDescription = document.getElementById("descriptionTextField").value
     var select = document.getElementById('language');
     var productType = select.options[select.selectedIndex].value;
-    var suspended = "WAITING"
+    var suspended = false
     var review = 0
 
     var storeObject = new Object()
