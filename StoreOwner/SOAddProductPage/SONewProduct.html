@@ -15,7 +15,8 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- my stylesheet -->
-    <link href="/Customer/SingleProductPage/SingleProduct.css" rel="stylesheet">
+    <link href="../SOSettings/SOSettings.css" rel="stylesheet">
+
 
     <!-- icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
@@ -29,32 +30,57 @@
         });
     </script>
 
-    <title>Store Owner New Product Page</title>
+    <title>New Product</title>
 </head>
-
-
 
 <body>
     <div id="header"></div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <img class="img-responsive" src="/images/unsplash_NOpsC3nWTzY.svg" alt="Product image">
-            </div>
-            <div class="col" id="details">
-                <h3>Product Name</h3>
-                <input type="text" id="nameTextField"></input>
-                <h3>Product Price</h3>
-                <input type="text" id="priceTextField"></p>
-                <div class="dropdownsize">
-                    <select id="language">
-                        <option class="dropdown-item" value="CLOTHES" selected>CLOTHES</option>
-                        <option class="dropdown-item" value="SHOES">SHOES</option>
-                        <option class="dropdown-item" value="BAGS">BAGS</option>
-                        <option class="dropdown-item" value="ACCESSORIES">ACCESSORIES</option>
-                    </select>
+        <div class="row" id="content">
+            <div class="col" id="productImagePart">
+                <div class="row"></div>
+                <div class="row justify-content-center mb-5 mt-15" id="productPicture">
+                    <svg width="189" height="189" viewBox="0 0 189 189" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <circle cx="94.5" cy="94.5" r="93" fill="url(#pattern0)" stroke="#688691" stroke-width="3" />
+                        <defs>
+                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image01" transform="translate(-0.25) scale(0.003125)" />
+                            </pattern>
+                            <image src="#" id="image01" width="480" height="320" />
+                        </defs>
+                    </svg>
                 </div>
-                <div>
+                <div class="row justify-content-center mx-5" id="uploadFileButton">
+                    <input type='file' />
+                    <button type="button" onclick="importFile()"
+                        class="btn btn-outline-secondary mt-0 blueButtons">Upload Photo</button>
+                </div>
+                <div class="row justify-content-center mx-5">
+                    <button id="editProfileButton" type="button" onclick="infoEnabled()"
+                        class="btn btn-outline-secondary mt-4 mb-4 blueButtons">Edit Product</button>
+                </div>
+            </div>
+            <div class="col" id="productInformationPart">
+                <div class="row justify-content-center mb-4">
+                    <label for="textInput" class="label">Product Name</label>
+                    <input type="text" class="form-control" id="nameTextField">
+                </div>
+                <div class="row justify-content-center mb-4">
+                    <label for="textInput" class="label">Price</label>
+                    <input type="text" class="form-control" id="priceTextField">
+                </div>
+                <div class="row mb-4">
+                    <select id = "language" class="form-select" aria-label="Default select example">
+                        <option selected>Select category</option>
+                        <option value="CLOTHES">Clothes</option>
+                        <option value="SHOES">Shoes</option>
+                        <option value="BAGS">Bags</option>
+                        <option value="ACCESSORIES">Accessories</option>
+                      </select>
+
+                </div>
+                <div class="row mb-4">
                     <p class="labels">Quantity</p>
                     <form>
                         <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
@@ -62,13 +88,15 @@
                         <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
                     </form>
                 </div>
-                <p class="labels">Description</p>
-                <textarea type="text" id="descriptionTextField" class="description" rows="10" cols="30"></textarea>
-                <p class="text"><button type="button" class="btn btn-success button" onclick="addItem()"
-                        id="greenButton">Add Item</button></p>
+                <div class="row mb-4">
+                    <p class="labels">Description</p>
+                    <textarea type="text" id="descriptionTextField" class="description" rows="10" cols="30"></textarea>
+                </div>
+                <div class="row">
+                    <p class="text"><button type="button" id="topButtons" onclick = "saveChanges()"class="btn btn-success button" id="addItemButton">ADD ITEM</button></p>
+                </div>
             </div>
         </div>
-
     </div>
 
     <!-- My JavaScript -->

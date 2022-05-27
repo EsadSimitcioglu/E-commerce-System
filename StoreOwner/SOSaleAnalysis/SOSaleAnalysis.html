@@ -15,7 +15,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- my stylesheet -->
-    <link href="../PlatformManager.css" rel="stylesheet">
+    <link href="../SOProductManagement/SOProductManagement.css" rel="stylesheet">
 
     <!-- icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
@@ -30,52 +30,48 @@
         });
     </script>
 
-    <title>Store Management</title>
+    <title>Sale Analysis</title>
 </head>
-
 
 <body>
     <div id="header"></div>
     <div class="container-fluid">
         <div class="row" id="menu-row">
             <div class="col-lg-3 col-md-3 col-sm-12 mt-15" id="menu">
-                <a href="../PMStoreConfirmation/PMStoreConfirmation.html">
-                    <p class="text">Store Confirmation</p>
-                </a>
-                <br>
-                <a href="../PMProductManagement/PMProductManagement.html">
+                <a href="../SOProductManagement/SOProductManagement.html">
                     <p class="text">Product Management</p>
                 </a>
                 <br>
-                <a href="../PMStoreManagement/PMStoreManagement.html">
-                    <p class="text" id="selected-text">Store Management</p>
+                <a href="../SOOrders/SOOrders.html">
+                    <p class="text">Orders</p>
                 </a>
                 <br>
-            </div>
-            <div class="col-lg-9 col-md-9 col-sm-12" id="details">
-                <!-- titles -->
-                <div class="row mx-5" id="titles">
-                    <p class="text">Store Name</p>
-                </div>
-
-                <div class = "row" id="product-detailss">
-                </div>
-
+                <a href="../SOInvoices/SOInvoices.html">
+                    <p class="text">Invoices</p>
+                </a>
+                <br>
+                <a href="../SOVerifyComments/SOVerifyComments.html">
+                    <p class="text">Verify Comments</p>
+                </a>
+                <br>
+                <a href="../SOSettings/SOSettings.html">
+                    <p class="text">Settings</p>
+                </a>
+                <br>
+                <a href="../SOSaleAnalysis/SOSaleAnalysis.html">
+                    <p class="text" id="selected-text">Sale Analysis</p>
+                </a>
             </div>
         </div>
-
-    </div>
-    </div>
     </div>
 
     <!-- My JavaScript -->
-    <script src="PMStoreManagement.js"></script>
+    <script src=" "></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>

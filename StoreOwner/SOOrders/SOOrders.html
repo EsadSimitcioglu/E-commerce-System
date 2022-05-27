@@ -23,7 +23,10 @@
 
     <!-- navbar -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="SOOrders.js"></script>
     <script>
         $(function () {
             $("#header").load("/CommonPages/Header.html");
@@ -39,22 +42,35 @@
     <div class="container-fluid">
         <div class="row" id="menu-row">
             <div class="col-lg-3 col-md-3 col-sm-12 mt-15" id="menu">
-                <a href="/StoreOwner/SOProductManagement/SOProductManagement.html"><p class="text">Product Management</p></a>
+                <a href="/StoreOwner/SOProductManagement/SOProductManagement.html">
+                    <p class="text">Product Management</p>
+                </a>
                 <br>
                 <a href="../SOOrders/SOOrders.html">
                     <p class="text" id="selected-text">Orders</p>
                 </a>
                 <br>
-                <a href="../SOInvoices/SOInvoices.html"><p class="text">Invoices</p></a>
+                <a href="../SOInvoices/SOInvoices.html">
+                    <p class="text">Invoices</p>
+                </a>
                 <br>
-                <a href="#"><p class="text">Verify Comments</p></a>
+                <a href="../SOVerifyComments/SOVerifyComments.html">
+                    <p class="text">Verify Comments</p>
+                </a>
                 <br>
-                <a href="../SOSettings/SOSettings.html"><p class="text">Settings</p></a>
+                <a href="../SOSettings/SOSettings.html">
+                    <p class="text">Settings</p>
+                </a>
+                <br>
+                <a href="../SOSaleAnalysis/SOSaleAnalysis.html">
+                    <p class="text">Sale Analysis</p>
+                </a>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12" id="details">
                 <div class="row justify-content-end">
                     <div class="col">
-                        <p class="text"><button type="button" onclick = ""class="btn btn-success button" id="saveChangesButton">SAVE
+                        <p class="text"><button type="button" onclick="" class="btn btn-success button"
+                                id="saveChangesButton">SAVE
                                 CHANGES</button></p>
                     </div>
                 </div>
@@ -87,24 +103,26 @@
                         <p class="text" id="orderDate">01/02/22</p>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-12">
-                        <p class="text" id="" >$45.00</p>
+                        <p class="text" id="">$45.00</p>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-12">
                         <div class="dropdownsize">
-                            <a class="btn btn-outline-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="btn btn-outline-success dropdown-toggle" href="#" role="button"
+                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 Status
                             </a>
+
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Shipped</a></li>
-                                <li><a class="dropdown-item" href="#">Delivered</a></li>
-                                <li><a class="dropdown-item" href="#">In Process</a></li>
+                                <li><a onclick="shipped()" class="dropdown-item" href="#">Shipped</a></li>
+                                <li><a onclick="delivered()" class="dropdown-item" href="#">Delivered</a></li>
+                                <li><a onclick="inProcess()" class="dropdown-item" href="#">In Process</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col">
                         <div class="row justify-content-end">
-                                <p class="text"><button type="button" onclick = "" class="btn btn-success button" id="cancelOrderButton">
+                            <p class="text"><button type="button" onclick="" class="btn btn-success button"
+                                    id="cancelOrderButton">
                                     CANCEL ORDER</button></p>
                         </div>
                     </div>
@@ -117,24 +135,24 @@
                         <p class="text" id="orderDate2">22/02/22</p>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-12">
-                        <p class="text" id="" >$30.00</p>
+                        <p class="text" id="">$30.00</p>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-12">
                         <div class="dropdownsize">
-                            <a class="btn btn-outline-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Status
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Shipped</a></li>
-                                <li><a class="dropdown-item" href="#">Delivered</a></li>
-                                <li><a class="dropdown-item" href="#">In Process</a></li>
-                            </ul>
+                            <div class="dropdownsize">
+                                <select class="form-select" id="dropdownMenuLink" aria-label="Default select example">
+                                    <option selected>Status</option>
+                                    <option value="1">Shipped</option>
+                                    <option value="2">Delivered</option>
+                                    <option value="3">In Process</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="row justify-content-end">
-                                <p class="text"><button type="button" onclick = "" class="btn btn-success button" id="cancelOrderButton">
+                            <p class="text"><button type="button" onclick="" class="btn btn-success button"
+                                    id="cancelOrderButton">
                                     CANCEL ORDER</button></p>
                         </div>
                     </div>
@@ -147,25 +165,23 @@
                         <p class="text" id="orderDate3">22/02/22</p>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-12">
-                        <p class="text" id="" >$50.00</p>
+                        <p class="text" id="">$50.00</p>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-12">
                         <div class="dropdownsize">
-                            <a class="btn btn-outline-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Status
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Shipped</a></li>
-                                <li><a class="dropdown-item" href="#">Delivered</a></li>
-                                <li><a class="dropdown-item" href="#">In Process</a></li>
-                            </ul>
+                            <div class="dropdownsize">
+                                <select class="form-select" id="dropdownMenuLink" aria-label="Default select example">
+                                    <option selected>Status</option>
+                                    <option value="1">Shipped</option>
+                                    <option value="2">Delivered</option>
+                                    <option value="3">In Process</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="row justify-content-end">
-                                <p class="text"><button type="button" onclick = "" class="btn btn-success button" id="cancelOrderButton">
-                                    CANCEL ORDER</button></p>
+                                <p class="text"><button type="button" onclick = "cancelOrder()" class="btn btn-success button" id="cancelOrderButton">CANCEL ORDER</button></p>
                         </div>
                     </div>
                 </div>
@@ -175,7 +191,7 @@
     </div>
 
     <!-- My JavaScript -->
-    <script src="../SOProductManagement/SOProductManagement.js"></script>
+    <script src="SOOrders.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

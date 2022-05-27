@@ -58,13 +58,17 @@
                 <a href="SOSettings.html">
                     <p class="text" id="selected-text">Settings</p>
                 </a>
+                <br>
+                <a href="../SOSaleAnalysis/SOSaleAnalysis.html">
+                    <p class="text">Sale Analysis</p>
+                </a>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12" id="profile-settings">
                 <div class="container-fluid">
                     <div class="row justify-content-end">
                         <div class="col-lg-3 col-md-3 col-sm-12"></div>
                         <div class="col-lg-3 col-md-3 col-sm-12">
-                            <svg width="189" height="189" viewBox="0 0 189 189" fill="none"
+                            <svg id = "roundedImage" width="189" height="189" viewBox="0 0 189 189" fill="none"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <circle cx="94.5" cy="94.5" r="93" fill="url(#pattern0)" stroke="#688691"
                                     stroke-width="3" />
@@ -73,14 +77,14 @@
                                         <use xlink:href="#image0_187_176"
                                             transform="translate(-0.25) scale(0.003125)" />
                                     </pattern>
-                                    <image id="image" width="480" height="320" />
+                                    <image src = "https://media.geeksforgeeks.org/wp-content/uploads/20190529122828/bs21.png'id=" image" width="480" height="320" />
                                 </defs>
                             </svg>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-12">
                             <div class="row">
-                                <button type="button" onclick="importFile()"
-                                    class="btn btn-outline-secondary mt-0 blueButtons">Change logo</button>
+                                <input type="file" id="file-selector" onclick="importFile()" class="btn btn-outline-secondary mt-0 blueButtons" multiple>
+    
                             </div>
                             <div class="row">
                                 <button id="editProfileButton" type="button" onclick="infoEnabled()"
