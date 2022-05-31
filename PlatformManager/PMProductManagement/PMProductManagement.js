@@ -7,7 +7,15 @@ window.onload = function() {
             var productId = response.data[i].id
             var productName = response.data[i].name
             var productDescription = response.data[i].description
-            products += '<div class="row border-bottom" id="shoppingCard" style="padding: 0% 7% 0% 7%"><div class="col"><p class="text" style="margin-top: 37%;"> ' + productDescription + '</p></div><div class="col"><p class="text" style="margin-top: 37%;">' + productName + '</p></div><div class="col"><p class="text"><button onClick = "acceptProduct(' + productId + ')" type="button" class="btn btn-success button" id="acceptButton"style="margin-top: 25%;">SUSPEND</button></p></div><div class="col"><p class="text"><button onClick = "rejectProduct(' + productId + ')" type="button" class="btn btn-success button" id="rejectButton"style="margin-top: 25%;">UNSUSPEND</button></p></div></div>'
+            var isSuspended = response.data[i].suspended
+
+            if(isSuspended){
+              products += '<div class="row border-bottom" id="shoppingCard" style="padding: 0% 7% 0% 7%"><div class="col"><p class="text" style="margin-top: 37%;"> ' + productDescription + '</p></div><div class="col"><p class="text" style="margin-top: 37%;">' + productName + '</p></div><div class="col"><p class="text"><button disabled onClick = "acceptProduct(' + productId + ')" type="button" class="btn btn-success button" id="acceptButton"style="margin-top: 25%;">SUSPEND</button></p></div><div class="col"><p class="text"><button onClick = "rejectProduct(' + productId + ')" type="button" class="btn btn-success button" id="rejectButton"style="margin-top: 25%;">UNSUSPEND</button></p></div></div>'
+            }
+            else {
+              products += '<div class="row border-bottom" id="shoppingCard" style="padding: 0% 7% 0% 7%"><div class="col"><p class="text" style="margin-top: 37%;"> ' + productDescription + '</p></div><div class="col"><p class="text" style="margin-top: 37%;">' + productName + '</p></div><div class="col"><p class="text"><button onClick = "acceptProduct(' + productId + ')" type="button" class="btn btn-success button" id="acceptButton"style="margin-top: 25%;">SUSPEND</button></p></div><div class="col"><p class="text"><button disabled onClick = "rejectProduct(' + productId + ')" type="button" class="btn btn-success button" id="rejectButton"style="margin-top: 25%;">UNSUSPEND</button></p></div></div>'
+            }
+
         }
           document.getElementById("card").innerHTML = products
       })
