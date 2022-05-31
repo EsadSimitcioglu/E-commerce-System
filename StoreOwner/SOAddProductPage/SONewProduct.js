@@ -23,6 +23,7 @@ function saveChanges(){
     var select = document.getElementById('language');
     var productType = select.options[select.selectedIndex].value;
     var suspended = false
+    var confirmationType = "WAITING"
     var review = 0
 
     var storeObject = new Object()
@@ -37,6 +38,7 @@ function saveChanges(){
         description: productDescription,
         store : storeObject,
         suspended: suspended,
+        confirmationType : confirmationType,
         review : review,
       })
       .then(function (response) {
