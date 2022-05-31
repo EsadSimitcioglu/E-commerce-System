@@ -33,9 +33,6 @@ window.onload = function () {
 
 function saveChanges(){
 
-
-    
-
     var productName = document.getElementById("nameTextField").value
     var productPrice = document.getElementById("priceTextField").value
     var productQuantity = document.getElementById("number").value
