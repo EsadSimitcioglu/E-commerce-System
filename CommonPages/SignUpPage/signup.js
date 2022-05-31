@@ -23,7 +23,7 @@ function signUp() {
     })
     .then(function (response) {
       console.log(response);
-      if(response.data == "../LoginPage/login.html")
+      if(response.data == "../LoginPage/Login.html")
         alert("Registered succesfully !")
       else
         alert("Failed to register !")
@@ -44,6 +44,10 @@ function signUp() {
     })
     .then(function (response) {
       console.log(response);
+      if(response.data == "../LoginPage/Login.html")
+        alert("Registered succesfully !")
+      else
+        alert("Failed to register !")
     })
     .catch(function (error) {
       console.log(error);

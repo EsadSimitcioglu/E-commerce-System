@@ -23,7 +23,7 @@ window.onload = function() {
           console.log(response.data[i].name)
           console.log(response.data[i].price)
           console.log(response.data[i].id)
-          allProducts += "<div class=\"col-lg-4 col-md-6 col-sm-6\" align=\"center\"><div class=\"product\" onclick=\"addBasket(" + response.data[i].id + "," + '\'' + response.data[i].name + '\'' + "," + response.data[i].price + ")\"><a><img class=\"img-fluid\" src=images\\unsplash_NOpsC3nWTzY.svg></a><div class=\"bottom\"><h4><img class=\"cart\" src=\"images\\Vector.svg\">" + response.data[i].price + " ETH" + "</h4></div></div></div>"
+          allProducts += "<div class=\"col-lg-4 col-md-6 col-sm-6\" align=\"center\"><div class=\"product\" onclick=\"addBasket(" + response.data[i].id + "," + '\'' + response.data[i].name + '\'' + "," + response.data[i].price + ")\"><a><img class=\"img-fluid\" src=\\..\\images\\unsplash_NOpsC3nWTzY.svg></a><div class=\"bottom\"><h4><img class=\"cart\" src=\"\\..\\images\\Vector.svg\">" + response.data[i].price + " ETH" + "</h4></div></div></div>"
         }
   
         console.log(allProducts)
