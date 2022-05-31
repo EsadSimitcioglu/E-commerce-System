@@ -69,7 +69,7 @@
             <div class="col-lg-9 col-md-9 col-sm-12" id="details">
                 <div class="row justify-content-end">
                     <div class="col">
-                        <p class="text"><button type="button" onclick="" class="btn btn-success button"
+                        <p class="text"><button type="button" onclick="saveChanges()" class="btn btn-success button"
                                 id="saveChangesButton">SAVE
                                 CHANGES</button></p>
                     </div>
@@ -96,103 +96,17 @@
 
                 <!-- order cards -->
                 <div class="row shadow p-5 mb-5 bg-body rounded mx-1" id="product-detailss">
-                    <div class="col-lg-2 col-md-2 col-sm-12">
-                        <p class="text" id="orderID">#00001</p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-12">
-                        <p class="text" id="orderDate">01/02/22</p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-12">
-                        <p class="text" id="">$45.00</p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-12">
-                        <div class="dropdownsize">
-                            <a class="btn btn-outline-success dropdown-toggle" href="#" role="button"
-                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                Status
-                            </a>
-
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a onclick="shipped()" class="dropdown-item" href="#">Shipped</a></li>
-                                <li><a onclick="delivered()" class="dropdown-item" href="#">Delivered</a></li>
-                                <li><a onclick="inProcess()" class="dropdown-item" href="#">In Process</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row justify-content-end">
-                            <p class="text"><button type="button" onclick="" class="btn btn-success button"
-                                    id="cancelOrderButton">
-                                    CANCEL ORDER</button></p>
-                        </div>
-                    </div>
+                    
                 </div>
-                <div class="row shadow p-5 mb-5 bg-body rounded mx-1" id="product-details2">
-                    <div class="col-lg-2 col-md-2 col-sm-12">
-                        <p class="text" id="orderID2">#00002</p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-12">
-                        <p class="text" id="orderDate2">22/02/22</p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-12">
-                        <p class="text" id="">$30.00</p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-12">
-                        <div class="dropdownsize">
-                            <div class="dropdownsize">
-                                <select class="form-select" id="dropdownMenuLink" aria-label="Default select example">
-                                    <option selected>Status</option>
-                                    <option value="1">Shipped</option>
-                                    <option value="2">Delivered</option>
-                                    <option value="3">In Process</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row justify-content-end">
-                            <p class="text"><button type="button" onclick="" class="btn btn-success button"
-                                    id="cancelOrderButton">
-                                    CANCEL ORDER</button></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row shadow p-5 mb-5 bg-body rounded mx-1" id="product-details3">
-                    <div class="col-lg-2 col-md-2 col-sm-12">
-                        <p class="text" id="orderID3">#00003</p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-12">
-                        <p class="text" id="orderDate3">22/02/22</p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-12">
-                        <p class="text" id="">$50.00</p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-12">
-                        <div class="dropdownsize">
-                            <div class="dropdownsize">
-                                <select class="form-select" id="dropdownMenuLink" aria-label="Default select example">
-                                    <option selected>Status</option>
-                                    <option value="1">Shipped</option>
-                                    <option value="2">Delivered</option>
-                                    <option value="3">In Process</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row justify-content-end">
-                                <p class="text"><button type="button" onclick = "cancelOrder()" class="btn btn-success button" id="cancelOrderButton">CANCEL ORDER</button></p>
-                        </div>
-                    </div>
-                </div>
+            
 
             </div>
         </div>
     </div>
 
     <!-- My JavaScript -->
-    <script src="SOOrders.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="../SOProductManagement/SOProductManagement.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
