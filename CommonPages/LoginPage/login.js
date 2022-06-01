@@ -37,6 +37,8 @@ function login() {
     }
     else if(document.getElementById("managerOption").checked){
       sessionStorage.setItem("userType","Manager")
+      location.href = "../../PlatformManager/PMProductManagement/PMProductManagement.html"
+
     }
     else if(document.getElementById("storeOwnerOption").checked){
 
