@@ -6,10 +6,22 @@ let passwordEnable = false
 
 
 window.onload = function() {
-  document.getElementById("nameTextField").value = sessionStorage.getItem("firstName")
-  document.getElementById("surnameTextField").value = sessionStorage.getItem("lastName")
-  document.getElementById("emailTextField").value = customerEmail
-  document.getElementById("oldPasswordTextField").value = sessionStorage.getItem("password")
+
+
+  axios.get(`http://localhost:8080/customer/${customerEmail}`)
+      .then(function (response) {
+        document.getElementById("nameTextField").value = response.data.name
+        document.getElementById("surnameTextField").value = response.data.surname
+        document.getElementById("emailTextField").value = response.data.email
+        document.getElementById("oldPasswordTextField").value = response.data.password
+        document.getElementById("addressTextField").value = response.data.address
+      })
+      .catch(function (error) {
+        console.log(error);
+    });
+
+  
+
 };
 
 function importFile(){
@@ -28,6 +40,8 @@ function infoEnabled(){
     document.getElementById("nameTextField").disabled = false
     document.getElementById("surnameTextField").disabled = false
     document.getElementById("emailTextField").disabled = false
+    document.getElementById("addressTextField").disabled = false
+
     infoEnable = true
 }
 
@@ -35,6 +49,7 @@ function infoDisabled(){
   document.getElementById("nameTextField").disabled = true
   document.getElementById("surnameTextField").disabled = true
   document.getElementById("emailTextField").disabled = true
+  document.getElementById("addressTextField").disabled = true
   infoEnable = false
 }
 
@@ -91,12 +106,15 @@ function changeInfo(){
     let name = document.getElementById("nameTextField").value
     let surname = document.getElementById("surnameTextField").value; 
     let email = document.getElementById("emailTextField").value; 
+    let address = document.getElementById("addressTextField").value;
+
 
     axios.put('http://localhost:8080/customer/info', {
         id: customerID,
         name: name, 
         surname: surname, 
-        email : email
+        email : email,
+        address: address
       })
       .then(function (response) {
         alert("Info's Are Changed")

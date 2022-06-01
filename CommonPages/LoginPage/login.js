@@ -21,6 +21,7 @@ function login() {
           sessionStorage.setItem("firstName",response.data.name)
           sessionStorage.setItem("lastName",response.data.surname)
           sessionStorage.setItem("ID",response.data.id)
+          sessionStorage.setItem("Address",response.data.address)
 
           sessionStorage.setItem("userType","Customer")
           location.href = "../../Customer/CustomerHomePage/CustomerHome.html"
