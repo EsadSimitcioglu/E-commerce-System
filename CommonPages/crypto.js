@@ -122,16 +122,19 @@ async function createOrder(orders,price) {
           storeId: response.data.id,
           status: "IN_PROCESS",
           date: "2022-06-01",
-          price: price
+          price: price,
+          productIds: productIds,
+          quantities: quantities
         })
         const config = {
           headers: { 'Content-Type': 'application/json' }
         }
-        await axios.post('http://localhost:8080/customerOrder', data, config)
+        axios.post('http://localhost:8080/customerOrder', data, config)
       })
       .catch(function (error) {
         console.log(error);
-      }); 
+      });
+    await axios.get('http://localhost:8080/') 
 }
 
 async function getProductIdsFromOrders(orders) {
