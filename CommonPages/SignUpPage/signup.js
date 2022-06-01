@@ -23,13 +23,11 @@ function signUp() {
     })
     .then(function (response) {
       console.log(response);
-      if(response.data == "../LoginPage/Login.html")
-        alert("Registered succesfully !")
-      else
-        alert("Failed to register !")
+      alert("Registered succesfully !")
       window.location.href = response.data
     })
     .catch(function (error) {
+      alert("Failed to register !")
       console.log(error);
     });
   }
@@ -44,12 +42,11 @@ function signUp() {
     })
     .then(function (response) {
       console.log(response);
-      if(response.data == "../LoginPage/Login.html")
-        alert("Registered succesfully !")
-      else
-        alert("Failed to register !")
+      alert("Registered succesfully !")
+      window.location.href = response.data
     })
     .catch(function (error) {
+      alert("Failed to register !")
       console.log(error);
     });
   }
