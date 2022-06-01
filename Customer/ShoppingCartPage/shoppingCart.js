@@ -15,7 +15,6 @@ window.onload = function() {
     document.getElementById("totalValue2").innerHTML = "$" + subTotal
     document.getElementById("totalValue2").value = subTotal
 
-
     var shoppingCard = ""
     console.log(shoppingCard)
     for(var i = 0; i < orderList.length; i++) {
@@ -23,8 +22,6 @@ window.onload = function() {
     }
 
     document.getElementById("shoppingCard").innerHTML = shoppingCard
-
-    console.log(shoppingCard)
 };
 
 function increaseValue(price) {
