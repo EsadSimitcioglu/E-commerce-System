@@ -114,7 +114,7 @@ async function createOrder(orders,price) {
   productIds = await getProductIdsFromOrders(orders)
   quantities = await getProductQuantitiesFromOrders(orders)
 
-  await axios.get(`http://localhost:8080/store/${orders[0].storeOwnerId}`)
+  axios.get(`http://localhost:8080/store/${orders[0].storeOwnerId}`)
       .then(function (response) {
 
         const data = JSON.stringify({
