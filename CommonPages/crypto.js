@@ -114,7 +114,7 @@ async function createOrder(orders,price) {
   productIds = await getProductIdsFromOrders(orders)
   quantities = await getProductQuantitiesFromOrders(orders)
 
-  axios.get(`http://localhost:8080/store/${orders[0].storeOwnerId}`)
+  await axios.get(`http://localhost:8080/store/${orders[0].storeOwnerId}`)
       .then(function (response) {
 
         const data = JSON.stringify({
@@ -127,7 +127,9 @@ async function createOrder(orders,price) {
         const config = {
           headers: { 'Content-Type': 'application/json' }
         }
-        await axios.post('http://localhost:8080/customerOrder', data, config)
+        console.log(response.data.id)
+        console.log(parseInt(sessionStorage.getItem("ID")))
+        axios.post('http://localhost:8080/customerOrder', data, config)
       })
       .catch(function (error) {
         console.log(error);
