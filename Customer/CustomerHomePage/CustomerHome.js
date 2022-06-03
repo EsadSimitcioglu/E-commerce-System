@@ -67,7 +67,7 @@ function searchProduct() {
 
 
 function getDetailsOfProducts(id){
-
+    
 }
 
 function colorChange() {
