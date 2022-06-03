@@ -3,7 +3,9 @@ function login() {
     let password = document.getElementById("pass").value
     let mfaCode = document.getElementById("code").value
     
-  
+    if(document.getElementById("managerOption").checked){
+      location.href = "../../PlatformManager/PMSaleAnalysis/PMSaleAnalysis.html"
+    }
     if(document.getElementById("customerOption").checked){
       
       axios.post('http://localhost:8080/customer/mfa', {
@@ -36,7 +38,24 @@ function login() {
       
     }
     else if(document.getElementById("managerOption").checked){
-      sessionStorage.setItem("userType","Manager")
+
+      axios.get(`http://localhost:8080/platformManager/${email}`)
+      .then(function (response) {
+        console.log(response.data)
+        if(response.data.password == password) {
+          alert("Platform Manager Logged In")
+          sessionStorage.setItem("userType","Manager")
+          location.href = "../../PlatformManager/PMSaleAnalysis/PMSaleAnalysis.html"
+        }
+        else  {
+          console.log("Wrong credentials");
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+    });
+
+      
     }
     else if(document.getElementById("storeOwnerOption").checked){
 

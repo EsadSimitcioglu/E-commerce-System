@@ -106,7 +106,7 @@ form #increase {
     margin-top: -2px;
 }
 
-input.number {
+input#number {
     text-align: center;
     margin: 0px;
     width: 32px;
